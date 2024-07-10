@@ -1,0 +1,47 @@
+@import './page-base.scss';
+@import './progressbar.scss';
+
+#toc__heading {
+	@include flex-center-items;
+}
+
+.page {
+	@include page-base;
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__abstract {
+		@include theme-colors-just-text;
+		font-family: 'Oswald', sans-serif;
+		font-size: $text-lg !important;
+
+		p {
+			font-size: $text-sm;
+		}
+	}
+
+	&__toc {
+		@include rounded-md;
+		@include theme-colors;
+
+		&__header {
+			position: relative;
+		}
+
+		&__toggle {
+			position: absolute;
+			transition: rotate $animation-speed-base;
+			top: 8px;
+			left: 16px;
+		}
+
+		&__item {
+			cursor: pointer;
+			font-family: 'Oswald', sans-serif;
+			font-size: $text-md;
+		}
+	}
+}

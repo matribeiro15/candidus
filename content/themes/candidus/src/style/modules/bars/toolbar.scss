@@ -1,0 +1,118 @@
+$toolbar-directions: (
+	right,
+	left
+);
+
+@mixin responsiveToolbarBottom {
+	z-index: 5;
+	border-radius: 0 !important;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+
+	&--hidden {
+		transform: translateY(80px);
+	}
+
+	>.toolbar__left {
+		display: none;
+	}
+
+	>.toolbar__right {
+		margin: auto;
+	}
+}
+
+@mixin placeFlexContent($direction) {
+	@if $direction =='right' {
+		justify-content: end;
+	}
+}
+
+.toolbar {
+	@include rounded-md;
+	@include bar;
+	transition: transform $animation-speed-base;
+
+
+
+	&--wrap {
+		@include md-screen {
+			flex-direction: row;
+		}
+
+		@include lg-screen {
+			flex-direction: row;
+		}
+
+		@include xl-screen {
+			flex-direction: row;
+		}
+
+		@include xxl-screen {
+			flex-direction: row;
+		}
+
+		flex-direction: column;
+	}
+
+	&--vertical {
+		flex-direction: column;
+	}
+
+	&--responsive {
+		@include sm-screen {
+			@include responsiveToolbarBottom;
+		}
+
+		@include xs-screen {
+			@include responsiveToolbarBottom;
+		}
+
+		@include md-screen {
+			@include responsiveToolbarBottom;
+		}
+	}
+
+	&--primary {
+		background-color: var(--color-primary);
+		color: $color-white;
+	}
+
+	&--secondary {
+		background-color: var(--color-secondary);
+		color: $color-white;
+	}
+
+	&--theme {
+		@include theme-colors;
+	}
+
+	&--fit-content {
+		max-width: fit-content;
+	}
+
+	&__item>* {
+		fill: $color-white;
+		color: $color-white;
+	}
+
+	&__button {
+		@include dark-theme-colors;
+		@include rounded-md;
+		border: none;
+		cursor: pointer;
+		padding: 0.75rem;
+	}
+
+	@each $direction in $toolbar-directions {
+		&__#{$direction} {
+			@include placeFlexContent($direction);
+			list-style: none;
+			display: flex;
+			text-align: $direction;
+		}
+	}
+}

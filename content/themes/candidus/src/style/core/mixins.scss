@@ -1,0 +1,251 @@
+@import './variables.scss';
+
+$collection-border: 0.1rem solid transparentize($color: $color-grey,
+		$amount: 0.5,
+	);
+
+@mixin container {
+	width: 100%;
+	margin: auto;
+	display: block;
+}
+
+@mixin grid-row {
+	width: 100%;
+	margin: auto;
+	display: flex;
+	flex: 1 0 0%;
+	flex-wrap: wrap;
+	flex-direction: row;
+
+	&::after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+}
+
+@mixin grid-col {
+	width: 100%;
+	float: left;
+	flex-grow: 1;
+	padding-left: $col-padding;
+	padding-right: $col-padding;
+}
+
+@mixin content-centered {
+	display: block;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+@mixin collection {
+	line-height: $line-height-md;
+	font-size: $text-md;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border-radius: $border-radius-sm;
+}
+
+@mixin card-base {
+	@include rounded-md;
+	background-color: var(--color-primary);
+
+	&__header {
+		@include rounded-top-md;
+	}
+
+	&__title {
+		font-size: $text-lg;
+		color: $color-white;
+	}
+
+	&__body {
+		color: $color-white;
+		font-size: $text-md;
+	}
+
+	&__footer {
+		@include rounded-bottom-md;
+		position: relative;
+	}
+}
+
+@mixin post-base {
+	@include card-base;
+	position: relative;
+
+	&__author {
+		font-family: 'Oswald', sans-serif;
+		display: flex;
+		position: relative;
+		align-items: center;
+	}
+
+	&__authordetails {
+		color: $color-white;
+		display: inline-block;
+	}
+
+	&__authorname {
+		font-family: 'Oswald', sans-serif;
+		font-size: $text-sm;
+	}
+
+	&__created {
+		font-family: 'Oswald', sans-serif;
+		font-size: $text-xs;
+	}
+
+	&__tag {
+		font-family: 'Oswald', sans-serif;
+		font-weight: 600;
+		font-size: $text-sm;
+		background-color: var(--ghost-accent-color);
+		color: var(--color-primary);
+		text-align: center;
+		display: inline-block;
+
+		&--fixed {
+			@include rounded-top-sm;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			min-width: $post-tag-min-width;
+		}
+
+		&--default {
+			@include rounded-sm;
+		}
+	}
+}
+
+@mixin button {
+	@include theme-colors;
+	cursor: pointer;
+	font-weight: 600;
+	border: none;
+	border-radius: $border-radius-sm;
+	padding: 0.35rem;
+	display: inline-block;
+	font-size: $text-md;
+	background-color: transparent;
+}
+
+@mixin bar {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+@mixin input {
+	outline: none;
+	font-size: $text-sm;
+	border: none;
+	width: 100%;
+	padding: 0.5rem 1rem;
+}
+
+// Utility mixins
+@mixin text-truncate {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+@mixin flex-center-items {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin adjust-image-to-parent {
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	margin: 0;
+
+	& img {
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		min-height: 100%;
+		min-width: 100%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+@mixin featured-text {
+	text-transform: uppercase;
+	font-family: Oswald, 'Sans-serif';
+	color: var(--color-secondary);
+}
+
+// Mixins to round elements' borders
+// Modifier sm
+@mixin rounded-sm {
+	border-radius: $border-radius-sm;
+}
+
+@mixin rounded-top-sm {
+	border-top-left-radius: $border-radius-sm;
+	border-top-right-radius: $border-radius-sm;
+}
+
+@mixin rounded-bottom-sm {
+	border-bottom-left-radius: $border-radius-sm;
+	border-bottom-right-radius: $border-radius-sm;
+}
+
+// Modifier md
+@mixin rounded-md {
+	border-radius: $border-radius-md !important;
+}
+
+@mixin rounded-top-md {
+	border-top-left-radius: $border-radius-md;
+	border-top-right-radius: $border-radius-md;
+}
+
+@mixin rounded-bottom-md {
+	border-bottom-left-radius: $border-radius-md;
+	border-bottom-right-radius: $border-radius-md;
+}
+
+@mixin rounded-lg {
+	border-radius: $border-radius-lg !important;
+}
+
+// Maximum radius (= Circular)
+@mixin rounded-max {
+	border-radius: 9999px;
+}
+
+@mixin underline-color-secondary {
+	position: relative;
+	z-index: 0;
+	transition: all calc($animation-speed-base * 0.5) cubic-bezier(0.5, 0, 0.5, 1);
+
+	&::after {
+		@include rounded-sm;
+		z-index: -1;
+		transition: height calc($animation-speed-base * 0.5) cubic-bezier(0.5, 0, 0.5, 1);
+		content: '';
+		height: 1px;
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		background-color: var(--color-secondary);
+	}
+
+	&:hover {
+		&::after {
+			height: 100%;
+		}
+	}
+}

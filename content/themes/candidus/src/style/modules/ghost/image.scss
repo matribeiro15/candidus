@@ -1,0 +1,30 @@
+/* Gallery Card images */
+// .kg-gallery-row {
+// 	@include grid-row;
+// }
+// .kg-gallery-image {
+// 	@include grid-col;
+// 	padding: 0;
+// }
+
+/* Classes for image sizes */
+.kg-image {
+	height: auto;
+	margin: $text-md auto;
+	max-width: 100%;
+	display: block;
+}
+
+.kg-image-card {
+	position: relative;
+}
+
+.kg-card.kg-width-wide,
+.kg-width-wide {
+	max-width: 80vw !important;
+}
+
+.kg-card.kg-width-full,
+.kg-width-full {
+	max-width: 98vw !important;
+}

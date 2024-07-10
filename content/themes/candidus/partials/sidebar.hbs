@@ -1,0 +1,38 @@
+{{!--
+Sidebar partial
+
+Shows primary navigation items, as well as the customizable sidebar-member-navigation.
+- Toggled by partial "menubutton.hbs"
+- Uses Javascript/Typescript class "SidebarControl.js/ts"
+
+The custom block use_static_member_pages should only be active if the following
+two static pages have been created in the admin panel:
+- login (uses page-login.hbs)
+- signup (uses page-signup.hbs)
+--}}
+
+<aside>
+	<nav id='sidebar' aria-hidden='true' class='sidebar sidebar--hidden'>
+		<ul class='sidebar__navigation'>
+			{{navigation}}
+
+			{{!-- Add this part of the navbar only if members are enabled --}}
+			{{#if @site.members_enabled}}
+
+			{{!-- Show login/signup buttons only if not logged in. Else, show logout button --}}
+			{{#unless @member}}
+			<li class='sidebar__navigation__item'>
+				<a tabindex='-1' class='px-4 py-2' href="#" data-portal="signup" data-umami-event="signup-button">Sign up</a>
+			</li>
+			<li class='sidebar__navigation__item'>
+				<a tabindex='-1' class='px-4 py-2' href="#" data-portal="signin" data-umami-event="login-button">Log in</a>
+			</li>
+			{{else}}
+			<li class='sidebar__navigation__item'>
+  			<a tabindex='-1' class='px-4 py-2' href="javascript:" data-members-signout>Sign out</a>
+			{{/unless}}
+
+			{{/if}}
+		</ul>
+	</nav>
+</aside>

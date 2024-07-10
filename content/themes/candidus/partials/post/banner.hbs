@@ -1,0 +1,92 @@
+{{!--
+Post - banner partial
+
+Used in the 'index.hbs' & the 'post.hbs' pages. It shows the following:
+- If maintained: The feature image of the post
+- If no feature image is maintained: The feature image of the primary tag
+- If no tag and tag image is maintained: The site's cover image
+- The post name, tag and author
+- An indicator for whether the post is featured or not
+
+The banner can serve as a template for Swiper.js slides.
+If it does, it uses the Slider.js/ts class.
+
+See https://swiperjs.com/ for more information on Swiper
+--}}
+
+{{#if useSliderClass }}<a class='swiper-slide px-1' href='{{url}}'> {{/if}}
+  <div class='postbanner'>
+    <div class='postbanner__inner container-fluid'>
+      <!-- Absolute position of title and excerpt -->
+      <!-- Grid for the image -->
+      <div class='row'>
+        <div class='col-12 col-xl-6 col-xxl-6 px-0'>
+          <!-- Empty column for spacing on the left hand -->
+        </div>
+        <div class='col-12 col-xl-6 col-xxl-6 px-0'>
+          <div class='postbanner__image'>
+            {{#if feature_image}}
+            <img class='image--responsive' src='{{img_url feature_image}}' alt='{{title}} by {{primary_author.name}}' />
+            {{else if primary_tag.feature_image}}
+            <img class='image--responsive' src='{{primary_tag.feature_image}}' alt='{{title}} by {{primary_author.name}}' />
+            {{/if}}
+          </div>
+        </div>
+      </div>
+
+      <div class='row'>
+        <div class='col-12 col-xl-6 col-xxl-6'>
+          <div class='postbanner__body mb-2'>
+            {{#if isPostSite}}
+            <h1 class='postbanner__title my-3'>{{title}}</h1>
+            {{else}}
+            <h2 class='postbanner__title my-3'>{{title}}</h2>
+            {{/if}}
+            {{#if featured}}
+            {{#if showFeatured}}
+            <p class='postbanner__featured mb-4'>{{t "Featured"}}</p>
+            {{/if}}
+            {{/if}}
+
+            {{#if showAuthor}}
+            {{#primary_author}}
+            <a href="{{url}}">
+              <div class="postbanner__author">
+                {{#if profile_image}}
+                <img class='image--rounded--xs mr-1' src='{{profile_image}}' alt='{{name}}' />
+                {{else}}
+                <img class='image--rounded--xs mr-1 bg-white' src='{{asset "built/images/user.png"}}' alt='{{name}}' />
+                {{/if}}
+
+                <div class="authorbanner__authordetails">
+                  <h4 class="postcard__authorname">
+                    {{name}}
+                  </h4>
+                  {{/primary_author}}
+                  <time class="postbanner__created" datetime="{{date format=" YYYY-MM-DD"}}">{{date}} - {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</time>
+                </div>
+              </div>
+            </a>
+            {{/if}}
+
+            {{#if showTags}}
+            <div class="mt-3">
+              {{#foreach tags}}
+              <a href="{{url}}">
+                <span class="postbanner__tag postbanner__tag--default px-2 py-1 mr-1 mt-1">
+                  {{name}}
+                </span>
+              </a>
+              {{/foreach}}
+            </div>
+            {{/if}}
+          </div>
+        </div>
+        <div class='col-12 col-xl-6 col-xxl-6'>
+          <!-- Empty columns for spacing on the right -->
+        </div>
+      </div>
+    </div>
+  </div>
+  {{#if useSliderClass }}
+</a>{{/if}}

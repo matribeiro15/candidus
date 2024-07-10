@@ -1,0 +1,5 @@
+.formcard {
+	@include post-base;
+	@include dark-theme-colors;
+	padding: 1rem 2.5rem;
+}

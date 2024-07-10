@@ -1,0 +1,108 @@
+.container-fluid {
+	@include container;
+}
+
+.container {
+	@include container;
+	width: $container-width;
+	max-width: $container-max-width;
+	&--page {
+		@include flex-center-items;
+		height: 80vh;
+		display: flex;
+		flex-direction: column;
+	}
+	&--relative {
+		position: relative;
+	}
+	&--centered {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+	}
+}
+
+.grid--three {
+	width: 100%;
+	display: grid;
+	grid-gap: calc($col-padding * 2);
+	grid-auto-rows: minmax(min-content, max-content);
+	grid-template-columns: 1fr;
+	@include md-screen {
+		grid-template-columns: 1fr 1fr;
+	}
+	@include lg-screen {
+		grid-template-columns: 1fr 1fr;
+	}
+	@include xl-screen {
+		grid-template-columns: 1fr 1fr;
+	}
+	@include xxl-screen {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+
+.row {
+	// TODO: Refactor this and in ghost-widgets into a mixin
+	@include grid-row;
+
+	// Column classes
+	[class^='col-'] {
+		@include grid-col;
+	}
+
+	@each $size in $col-sizes {
+		.col-#{$size} {
+			max-width: calc(100% / 12 * $size);
+		}
+	}
+
+	@include xxl-screen {
+		@each $size in $col-sizes {
+			.col-xxl-#{$size} {
+				max-width: calc(100% / 12 * $size);
+			}
+		}
+	}
+
+	@include xl-screen {
+		@each $size in $col-sizes {
+			.col-xl-#{$size} {
+				max-width: calc(100% / 12 * $size);
+			}
+		}
+	}
+
+	@include lg-screen {
+		@each $size in $col-sizes {
+			.col-lg-#{$size} {
+				max-width: calc(100% / 12 * $size);
+			}
+		}
+	}
+
+	@include md-screen {
+		@each $size in $col-sizes {
+			.col-md-#{$size} {
+				max-width: calc(100% / 12 * $size);
+			}
+		}
+	}
+
+	@include sm-screen {
+		@each $size in $col-sizes {
+			.col-sm-#{$size} {
+				max-width: calc(100% / 12 * $size);
+			}
+		}
+	}
+
+	@include xs-screen {
+		@each $size in $col-sizes {
+			.col-xs-#{$size} {
+				max-width: calc(100% / 12 * $size);
+			}
+		}
+	}
+}

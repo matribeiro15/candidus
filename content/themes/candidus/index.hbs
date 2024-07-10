@@ -1,0 +1,107 @@
+{{!--
+Index page
+
+Default landing page. It includes
+- The site banner OR a carousel of featured posts, using Slider.js (customizable by the user)
+- A grid or feed of published articles (type can be set by the user)
+- A subscription CTA to the right side
+--}}
+
+{{!-- Load slider.js assets only if necessary --}}
+{{#match @custom.select_homepage_banner_style "Featured posts"}}
+{{#contentFor 'styles'}}
+<link rel='stylesheet' type='text/css' href='{{asset "built/slider.css"}}' />
+{{/contentFor}}
+
+{{#contentFor "scripts"}}
+<script async src='{{asset "built/slider.bundle.js"}}'></script>
+{{/contentFor}}
+{{/match}}
+
+{{#contentFor "scripts"}}
+<script async src='{{asset "built/index.bundle.js"}}'></script>
+{{/contentFor}}
+
+{{!< default}} {{#get "posts" filter="featured:true" }} <div class="container mt-2 mb-6">
+  <div class="row">
+    <div class="col-12 px-0">
+
+      {{!-- Selector element for the Slider class --}}
+      <div id="index__banner__container--featured" class="swiper">
+        <div class="swiper-wrapper">
+          {{#match @custom.select_homepage_banner_style "Featured posts"}}
+          {{!-- Add h1 and h2 hidden tags for site description --}}
+
+          <h1 class="hidden">{{@site.title}}</h1>
+          <h2 class="hidden">{{@site.description}}</h2>
+          {{#foreach posts}}
+          {{> "post/banner" useSliderClass="true" showFeatured="true"}}
+          {{ else }}
+          {{> sitebanner }}
+          {{/foreach}}
+          {{/match}}
+          {{#match @custom.select_homepage_banner_style "Homepage banner"}}
+          {{> sitebanner }}
+          {{/match}}
+        </div>
+
+        {{!-- Slider navigation bullets --}}
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </div>
+  </div>
+  {{/get}}
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8 col-xxl-9">
+
+        {{!-- Posts toolbar --}}
+        <header class="toolbar toolbar--primary p-2 mb-4">
+          <div class="toolbar__left">
+            <h2 class="h3 ml-1">{{t "Latest publications"}}</h2>
+          </div>
+          <div class="toolbar__right">
+            <button title="{{t " Show a card grid of posts" }}" id="grid__button" class="btn btn--flex toolbar__item mr-1">{{> "icons/grid" color="white"}}</button>
+            <button title="{{t " Show a feed list of posts" }}" id="feed__button" class="btn btn--flex toolbar__item">{{> "icons/list" color="white"}}</button>
+          </div>
+        </header>
+
+        {{!-- Toggle between the following two list styles using util. class hidden --}}
+        <main>
+          <div id="post__container" class="grid--three">
+            {{#foreach posts}}
+            {{> "post/card" showHeader="true" showBody="true"}}
+            {{/foreach}}
+          </div>
+          <div id="feed__container" class="hidden">
+            {{#foreach posts}}
+            {{> "post/feed"}}
+            {{/foreach}}
+          </div>
+        </main>
+
+        {{!-- Read more button --}}
+        <div class="my-4 content--centered">
+          <button id="read-more__button" class="btn btn--primary btn--wider">{{t "Load more posts"}}</button>
+        </div>
+        <!-- / Posts section -->
+
+      </div>
+
+      {{!-- Subscription column --}}
+      <aside class="col-sm-12 col-md-12 col-lg-12 col-xl-4 col-xxl-3">
+        {{> "subscribe"}}
+        <div class="my-4">
+          {{> "tagcloud"}}
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  {{#if @custom.show_subscribe_cta_on_homepage}}
+  <div>
+    {{> "subscribe" type="block"}}
+  </div>
+  {{/if}}

@@ -1,0 +1,48 @@
+:root {
+	--light-bg-color: #{$color-light-white};
+	--light-text-color: #{$color-dark-grey};
+	--bg-color: #{$color-white};
+	--text-color: #{$color-black};
+	--dark-bg-color: #{$color-light-white};
+	--dark-text-color: #{$color-dark-grey};
+
+	--color-primary: #{$color-primary};
+	--color-secondary: #{$color-secondary};
+}
+
+:root.dark-theme {
+	// color-scheme: dark;
+	--light-bg-color: #{$color-dark-grey};
+	--light-text-color: #{$color-light-white};
+	--bg-color: #{$color-grey};
+	--text-color: #{$color-white};
+	--dark-bg-color: #{$color-dark-grey};
+	--dark-text-color: #{$color-white};
+}
+
+@function theme-color($for) {
+	@return var(--#{$for}-color);
+}
+
+@mixin theme-colors {
+	background-color: theme-color('bg');
+	color: theme-color('text');
+	fill: theme-color('text');
+}
+
+@mixin light-theme-colors {
+	background-color: theme-color('light-bg');
+	color: theme-color('light-text');
+	fill: theme-color('light-text');
+}
+
+@mixin dark-theme-colors {
+	background-color: theme-color('dark-bg');
+	color: theme-color('dark-text');
+	fill: theme-color('dark-text');
+}
+
+@mixin theme-colors-just-text {
+	color: theme-color('text');
+	fill: theme-color('text');
+}

@@ -1,0 +1,51 @@
+{{!
+Page - page
+
+Includes markup for the default post - page.
+- Includes the progress bar custom plugin. It can be enabled from the Ghost admin panel
+- Shows comments as of Ghost v5, if enabled by the site owner
+- Shows other articles below the post as per the following ruleset.
+-> If related posts are enabled, show posts with the same primary tag as the current one
+-> If there is no primary tag, show other posts from the same author
+}}
+
+{{#contentFor "styles"}}
+<link id="prism__stylesheet" rel="stylesheet" type="text/css" data-thirdparty_root='{{asset "built/thirdparty/prism/candidus-prism-placeholder"}}'>
+{{/contentFor}}
+
+{{#contentFor "scripts"}}
+<script id="prism__script" async data-src='{{asset "built/thirdparty/prism/prism.js"}}'></script>
+<script async src='{{asset "built/page.bundle.js"}}'></script>
+{{/contentFor}}
+
+{{!< default}} {{#post}} {{#match @page.show_title_and_feature_image}} {{#if feature_image}} <header class='container mb-4'>
+	<div class='banner banner--fixed-height'>
+		<div class='banner__text banner__text--themed mobile--hidden px-4 py-2'>
+			<h1 class='banner__title'>{{name}}</h1>
+			<p class='banner__description hidden-mobile'>{{description}}</p>
+		</div>
+		<img class='banner__image image--banner' srcset='{{img_url feature_image size=' s'}} 300w, {{img_url feature_image size='m' }} 600w, {{img_url feature_image size='l' }} 1000w, {{img_url
+			feature_image size='xl' }} 2000w' sizes='100vw' src='{{img_url feature_image size=' xl'}}' alt='{{name}}' />
+	</div>
+	</header>
+	{{/if}}
+	{{/match}}
+
+	<div class='container mt-8'>
+		<div class='row'>
+			<div class='col-xs-12 col-sm-12 col-md-1 col-lg-1 col-xl-2 col-xxl-2'></div>
+
+			<!-- Main content -->
+			<section class='col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-8 col-xxl-8'>
+				<div class='page mb-8'>
+					<h1>{{title}}</h1>
+					{{#if custom_excerpt}}
+					<p class='my-6 p-2 page__abstract'> {{custom_excerpt}} </p>
+					{{/if}}
+					<article id='post__container' class='page__content'>{{content}}</article>
+				</div>
+			</section>
+			<div class='col-xs-12 col-sm-12 col-md-1 col-lg-1 col-xl-2 col-xxl-2'></div>
+		</div>
+	</div>
+	{{/post}}

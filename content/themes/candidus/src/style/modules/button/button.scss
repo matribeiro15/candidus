@@ -1,0 +1,70 @@
+.btn {
+	@include button;
+	&--rounded {
+		@include button;
+		@include rounded-max;
+	}
+
+	&--flex {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&--wider {
+		padding-left: 1.35rem;
+		padding-right: 1.35rem;
+	}
+
+	&--block {
+		width: 100%;
+		display: block;
+	}
+
+	&--primary {
+		color: $color-white;
+		background-color: var(--color-primary);
+		&--outline {
+			background-color: transparent;
+			color: var(--color-primary);
+			border-color: var(--color-primary) !important;
+		}
+	}
+
+	&--white {
+		color: $color-primary;
+		background-color: $color-white;
+		&--outline {
+			border: 2px solid $color-white !important;
+			background-color: transparent;
+			color: $color-white;
+			transition: all calc($animation-speed-base/2);
+
+			&:hover {
+				background-color: $color-white;
+				color: var(--color-primary);
+			}
+		}
+	}
+
+	&--accent {
+		background-color: var(--ghost-accent-color);
+		&--outline {
+			background-color: transparent;
+			color: var(--ghost-accent-color);
+			border-color: var(--ghost-accent-color) !important;
+		}
+	}
+
+	&[disabled] {
+		filter: grayscale(50%);
+	}
+
+	@each $modifier, $size in $button-modifiers {
+		&#{$modifier} {
+			border: calc($size * 0.12) solid transparent;
+			padding: calc($size * 0.35) calc($size);
+			font-size: $size;
+		}
+	}
+}

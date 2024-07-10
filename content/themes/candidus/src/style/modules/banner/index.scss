@@ -1,0 +1,32 @@
+.banner {
+	position: relative;
+	height: 100%;
+	width: 100%;
+
+	&--fixed-height {
+		max-height: $banner-max-height;
+	}
+
+	&__text {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		&--themed {
+			background-color: var(--light-bg-color);
+			opacity: 0.98;
+			color: var(--light-text-color);
+		}
+	}
+
+	&__title {
+		font-size: $text-xxl;
+	}
+
+	&__description {
+		font-size: $text-lg;
+	}
+
+	&__image {
+		@include rounded-md;
+	}
+}

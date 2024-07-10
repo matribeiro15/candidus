@@ -1,0 +1,146 @@
+{{!--
+About the author
+
+This page includes default info about the author as well as a list of their published articles.
+- If a user has maintained their socal media accounts, they will get displayed in a bar under their name.,
+- If a user has not maintained any profile picture, a default icon will be shown instead
+--}}
+
+{{#contentFor "scripts"}}
+<script async src='{{asset "built/tag.bundle.js"}}'></script>
+{{/contentFor}}
+
+{{!< default}} <!-- -->
+    {{#author}}
+
+    <div class="container">
+        <div class="author__header">
+            <div class="author__header__bg-image">
+                {{#if cover_image}}
+                <img class="image--banner" src='{{cover_image}}' alt='{{name}}' />
+                {{else}}
+                <img class='banner__image image--wide' srcset='{{img_url @site.cover_image size=' s'}} 300w, {{img_url @site.cover_image size='m' }} 600w, {{img_url @site.cover_image size='l' }}
+                    1000w, {{img_url @site.cover_image size='xl' }} 2000w' sizes='100vw' src='{{img_url @site.cover_image size=' xl'}}' />
+                {{/if}}
+            </div>
+
+            <div class="author__header__author-image">
+                {{#if profile_image}}
+                <img class='image--rounded--md mx-auto' src='{{profile_image}}' alt='{{name}}' />
+                {{else}}
+                <img class='image--rounded--md mx-auto bg-white' src='{{asset "built/images/user.png"}}' alt='{{name}}' />
+                {{/if}}
+            </div>
+        </div>
+        <div class="author__spacer"></div>
+
+        <div class="row">
+            <div class="col-sm-12 col-md-1 col-lg-2 col-xl-3 col-xxl-4"></div>
+            <div class="col-sm-12 col-md-10 col-lg-8 col-xl-6 col-xxl-4">
+                <h1 class="content--centered">{{name}}</h1>
+                <div class="content--centered">
+
+                    {{#if bio}}
+                    <p>{{bio}}</p>
+                    {{/if}}
+                    {{!-- Maintained social media profiles --}}
+                    <ul class="socialbar socialbar--theme content--centered my-2">
+                        {{#if facebook}}
+                        <li class="socialbar__item mx-auto li-1">
+                            <a href="{{facebook_url facebook}}" target="_blank">
+                                <svg width='24px' height='24px' role='img' aria-label='{{slug}}'>
+                                    <use xlink:href='#facebook'></use>
+                                </svg>
+                            </a>
+                        </li>
+                        {{/if}}
+
+                        {{#if twitter}}
+                        <li class="socialbar__item mx-auto p-1">
+                            <a href="{{twitter_url twitter}}" target="_blank">
+                                <svg width='24px' height='24px' role='img' aria-label='{{slug}}'>
+                                    <use xlink:href='#twitter'></use>
+                                </svg>
+                            </a>
+                        </li>
+                        {{/if}}
+
+                        {{#if website}}
+                        <li class="socialbar__item mx-auto p-1">
+                            <a href="{{website}}" target="_blank">
+                                <svg width='24px' height='24px' role='img' aria-label='{{slug}}'>
+                                    <use xlink:href='#website'></use>
+                                </svg>
+                            </a>
+                        </li>
+                        {{/if}}
+                    </ul>
+                </div>
+                <p class="content--centered">
+                    <span class="text--secondary mr-1">
+                        {{> icons/pen height="16" width="16"}}
+                    </span>
+                    {{plural ../pagination.total empty=(t "{authorname} didn't publish anything yet" authorname=name) singular=(t "{authorname} published 1 article" authorname=name) plural=(t
+                    "{authorname} published % articles" authorname=name)}}
+                </p>
+                {{#if location}}
+                <p class="content--centered">
+                    <span class="text--secondary mr-1">
+                        {{> icons/web height="16" width="16"}}
+                    </span>
+                    {{t "Writing from"}} {{location}}
+                </p>
+                {{/if}}
+            </div>
+
+            <div class="col-sm-12 col-md-1 col-lg-2 col-xl-3 col-xxl-4"></div>
+        </div>
+    </div>
+
+    <div class='container'>
+        {{!--
+        A list of the author's publication.
+        Can be shown either as a feed or a grid-card gallery
+        --}}
+        <div class="row mt-4">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8 col-xxl-9">
+                <header class="toolbar toolbar--primary p-2 mb-4">
+                    <div class="toolbar__left">
+                        <h2 class="h3 ml-1">{{t "{authorname}'s publications" authorname=name}}</h2>
+                    </div>
+                    {{/author}}
+                    <div class="toolbar__right">
+                        <button title="{{t " Show a card grid of posts"}}" id="grid__button" class="btn btn--flex toolbar__item mr-1">{{> "icons/grid" color="white"}}</button>
+                        <button title="{{t " Show a feed list of posts"}}" id="feed__button" class="btn btn--flex toolbar__item">{{> "icons/list" color="white"}}</button>
+                    </div>
+                </header>
+
+                {{!-- Toggle between the following two list styles using util. class hidden --}}
+                <main>
+                    <div id="post__container" class="grid--three">
+                        {{#foreach posts}}
+                        {{> "post/card" showHeader="true" showBody="true"}}
+                        {{/foreach}}
+                    </div>
+                    <div id="feed__container" class="hidden">
+                        {{#foreach posts}}
+                        {{> "post/feed"}}
+                        {{/foreach}}
+                    </div>
+                </main>
+
+
+                {{!-- Load-more-posts button --}}
+                <div class="my-4 content--centered">
+                    <button id="read-more__button" class="btn btn--primary btn--wider">{{t "Load more posts"}}</button>
+                </div>
+
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 col-xxl-3">
+                {{> "subscribe"}}
+                <div class="my-4">
+                    {{> "tagcloud"}}
+                </div>
+            </div>
+        </div>
+    </div>

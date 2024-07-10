@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "outDir": "./assets/built",
+    "noImplicitAny": true,
+    "module": "AMD",
+    "target": "es5",
+    "allowJs": true,
+    "moduleResolution": "node"
+  }
+}

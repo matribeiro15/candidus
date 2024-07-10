@@ -1,0 +1,57 @@
+<article class='postfeed'>
+	<a href='{{url}}'>
+		<header class='postfeed__header p-2'>
+
+			{{#if feature_image}}
+			<img loading='lazy' class='image--square--md rounded--md' src='{{img_url feature_image}}' alt='{{title}} by {{primary_author.name}}' />
+			{{else if primary_tag.feature_image}}
+			<img loading='lazy' class='image--square--md rounded--md' src='{{primary_tag.feature_image}}' alt='{{title}} by {{primary_author.name}}' />
+			{{else}}
+			<img loading='lazy' class='image--square--md rounded--md' src='{{img_url @site.cover_image}}' alt='{{title}} by {{primary_author.name}}' />
+			{{/if}}
+		</header>
+		<div>
+			<h3 class='postfeed__title px-2 py-1'>
+				{{title}}
+			</h3>
+			<div class='postfeed__body p-2'>
+				{{excerpt}}
+			</div>
+	</a>
+	<footer class='postfeed__footer px-2'>
+		<!-- Author section -->
+		{{#primary_author}}
+		<div class='postfeed__author py-1'>
+			<a href='{{url}}'>
+				{{#if profile_image}}
+				<img loading='lazy' class='image--rounded--xs mr-1' src='{{img_url profile_image}}' alt='{{name}}' />
+				{{else}}
+				<img loading='lazy' class='image--rounded--xs mr-1 bg-white' src='{{asset "built/images/user.png"}}' alt='{{name}}' />
+				{{/if}}
+				<div class='postfeed__authordetails'>
+					<h4 class='postfeed__authorname'>
+						{{name}}
+					</h4>
+					{{/primary_author}}
+					<time class='postfeed__created' datetime='{{date format=' YYYY-MM-DD'}}'>
+						{{date}}
+					</time>
+				</div>
+			</a>
+		</div>
+		<!-- /Author section -->
+	</footer>
+	</div>
+
+	<!-- Tag section -->
+	{{#if primary_tag}}
+	{{#primary_tag}}
+	<a href='{{url}}'>
+		<span class='postfeed__tag postfeed__tag--fixed p-1 mr-2'>
+			{{name}}
+		</span>
+	</a>
+	{{/primary_tag}}
+	{{/if}}
+	<!-- /Tag section -->
+</article>

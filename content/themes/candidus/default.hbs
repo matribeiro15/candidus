@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html lang='{{@site.locale}}'>
+
+<head>
+  <title>{{meta_title}}</title>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='HandheldFriendly' content='True'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+  {{!--
+  Load styles. Fonts are preloaded and switched out once they're available to avoid
+  blocking the main execution thread.
+  --}}
+  <link rel="preload" as="font" href='{{asset "built/shared.css"}}' onload="this.onload=null;this.rel='stylesheet'">
+  <link rel='stylesheet' type='text/css' href='{{asset "built/index.css"}}'>
+  {{#if @custom.enable_bookmarks}}
+  <link rel='stylesheet' type='text/css' href='{{asset "built/bookmarks.css"}}'>
+  {{/if}}
+  {{{block "styles"}}}
+
+  {{!--
+  Colors injected by the user augment the theme's primary and secondary coloring.
+  - Primary colors are used for cards, feed, toolbars and other recurring elements.
+  - Secondary colors accent semi-important areas, such as links or CTA footers
+  --}}
+  <style>
+    :root {
+        {
+          {
+          #if @custom.primary_color
+        }
+      }
+
+      --color-primary: {
+          {
+          @custom.primary_color
+        }
+      }
+
+      ;
+
+        {
+          {
+          /if
+        }
+      }
+
+        {
+          {
+          #if @custom.secondary_color
+        }
+      }
+
+      --color-secondary: {
+          {
+          @custom.secondary_color
+        }
+      }
+
+      ;
+
+        {
+          {
+          /if
+        }
+      }
+    }
+  </style>
+
+  {{ghost_head}}
+</head>
+
+<body>
+  {{!--
+  Icons injected here are used by 'FooterSocialIcons' and permit a user to extend
+  the social icons displayed in the footer, e.g. by Linkedin, Github, etc.
+  --}}
+  {{> icons/socialicons}}
+  {{> navbar}}
+  {{> sidebar}}
+  {{{body}}}
+
+  {{!--
+  Add the footer below the injected content
+  The footer consists of
+  - Tags a user created
+  - An optional secondary navigation
+  - Default social icons from Ghost and those injected by a user using FooterSocialIconsPlugin
+  --}}
+  <footer class="footer pb-4 px-4">
+    <div class="container">
+      <div class="row">
+
+        {{!-- Footer / Secondary navigation --}}
+        {{#if @site.secondary_navigation}}
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-4">
+          <h3 class="footer__heading my-2">Navigation</h3>
+          <ul class="footer__list">
+            {{ navigation type="secondary" }}
+          </ul>
+        </div>
+        {{/if}}
+
+        {{!-- Footer / Social Icons --}}
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-4">
+          <h3 class="footer__heading my-2">{{t "Follow {site}" site=@site.title}}</h3>
+          <ul id="footer-social" class="footer__list">
+
+            {{#if @site.facebook}}
+            <li class='footer__listitem my-1'>
+              <a href="{{facebook_url @site.facebook}}" target="_blank" data-umami-event="follow-facebook" >
+                <svg class='mr-1' width='18px' height='18px' role='img' aria-label='facebook'>
+                  <use class="icon" href='#facebook'></use>
+                </svg>
+                <span>Facebook</span>
+              </a>
+            </li>
+            {{/if}}
+            {{#if @site.twitter}}
+            <li class='footer__listitem my-1'>
+              <a href="{{twitter_url @site.twitter}}" target="_blank">
+                <svg class='mr-1' width='18px' height='18px' role='img' aria-label='twitter' data-umami-event="follow-twitter">
+                  <use class="icon" href='#twitter'></use>
+                </svg>
+                <span>Twitter</span>
+              </a>
+            </li>
+            {{/if}}
+          </ul>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-4">
+          {{ghost_foot}}
+        </div>
+
+      </div>
+    </div>
+
+    <small class="footer__copyright mt-4">
+      {{@site.title}} &copy; {{date format="YYYY"}}
+    </small>
+    <small class="footer__copyright mt-1">
+      {{t "Powered by Ghost & Candidus Theme"}}
+    </small>
+  </footer>
+
+  {{!--
+  Load default and additional, page specific scripts.
+  For block helper, see https://handlebarsjs.com/guide/block-helpers.html
+  --}}
+  <script async src='{{asset "built/shared.bundle.js"}}'></script>
+  {{#if @custom.enable_bookmarks}}
+  <script async src='{{asset "built/bookmarks.bundle.js"}}'></script>
+  {{/if}}
+  {{{block "scripts"}}}
+</body>
+
+</html>

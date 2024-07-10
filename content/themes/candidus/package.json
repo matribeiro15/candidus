@@ -1,0 +1,198 @@
+{
+	"name": "candidus",
+	"sideEffects": false,
+	"description": "An approachable and minimalistic blogging theme for Ghost",
+	"demo": "https://blog.q-bit.me",
+	"version": "1.0.0",
+	"engines": {
+		"ghost": ">=5.0.0"
+	},
+	"license": "MIT",
+	"screenshots": {
+		"desktop": "assets/screenshot-desktop.jpg",
+		"mobile": "assets/screenshot-mobile.jpg"
+	},
+	"scripts": {
+		"dev": "webpack --mode development --watch",
+		"build": "webpack --mode production",
+		"zip": "npm run build && sh ./zip.sh",
+		"test": "gscan . && node ./test/html/w3.test.js",
+		"ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; else echo \"Uncomitted changes found.\" && exit 1; fi"
+	},
+	"author": {
+		"name": "Tobias Quante",
+		"email": "tq-bit@protonmail.com",
+		"url": "https://blog.q-bit.me"
+	},
+	"gpm": {
+		"type": "theme",
+		"categories": [
+			"Blog",
+			"Project",
+			"Minimal"
+		]
+	},
+	"keywords": [
+		"ghost-theme",
+		"customizable",
+		"darkmode",
+		"performant",
+		"blogging"
+	],
+	"devDependencies": {
+		"@babel/core": "^7.14.6",
+		"@babel/preset-env": "^7.14.7",
+		"@tryghost/release-utils": "^0.6.17",
+		"@webpack-cli/serve": "^1.6.0",
+		"copy-webpack-plugin": "^10.2.0",
+		"css-loader": "^6.5.1",
+		"dotenv-webpack": "^8.0.1",
+		"gscan": "^4.34.0",
+		"html-validator": "^6.0.1",
+		"mini-css-extract-plugin": "^2.4.5",
+		"postcss": "^8.2.8",
+		"postcss-loader": "^6.2.1",
+		"sass": "^1.45.1",
+		"sass-loader": "^12.4.0",
+		"terser-webpack-plugin": "^5.3.6",
+		"ts-loader": "^9.2.6",
+		"typescript": "^4.5.5",
+		"webpack": "^5.74.0"
+	},
+	"browserslist": [
+		"defaults"
+	],
+	"config": {
+		"card_assets": true,
+		"custom": {
+			"primary_color": {
+				"type": "color",
+				"description": "Primary color for your publication. Used for posts, cards and highlights",
+				"default": "#3f4d63"
+			},
+			"secondary_color": {
+				"type": "color",
+				"description": "Secondary color for your publication. Used to emphasize elements and content",
+				"default": "#f7c59f"
+			},
+			"enable_search": {
+				"type": "boolean",
+				"description": "Enable built-in search for Ghost. Toggles the search icon in the header section",
+				"default": true
+			},
+			"show_subscribe_cta_on_homepage": {
+				"type": "boolean",
+				"default": false
+			},
+			"subscription_card_text": {
+				"type": "text",
+				"description": "Additional text to display in the subscription card",
+				"default": "Join our newsletter to receive the latest updates in your inbox"
+			},
+			"subscription_card_text_disabled": {
+				"type": "text",
+				"description": "Additional text to display in the subscription card when subscription is disabled",
+				"default": "We're getting ready to make newsletters available to you. Follow us on social media to be one of the first to subscribe"
+			},
+			"select_social_media_when_subscription_is_disabled": {
+				"group": "homepage",
+				"description": "Icon to display in the subscription card. Used when subscription is disabled",
+				"type": "select",
+				"options": [
+					"Facebook",
+					"Twitter",
+					"DevTo",
+					"None"
+				],
+				"default": "Twitter"
+			},
+			"social_media_url_when_subscription_is_disabled": {
+				"group": "homepage",
+				"description": "Adds a clickable link to the subscription card. Used when subscription is disabled",
+				"type": "text",
+				"default": "https://dev.to/tqbit"
+			},
+			"subscription_card_image": {
+				"type": "image",
+				"description": "Background image for your subscription card"
+			},
+			"select_homepage_banner_style": {
+				"group": "homepage",
+				"description": "Style of the top homepage section",
+				"type": "select",
+				"options": [
+					"Featured posts",
+					"Homepage banner"
+				],
+				"default": "Featured posts"
+			},
+			"enable_table_of_contents": {
+				"group": "post",
+				"description": "Enable / disable table of contents for posts",
+				"type": "boolean",
+				"default": true
+			},
+			"enable_post_reading_progress_bar": {
+				"group": "post",
+				"description": "Enable / disable post reading progress bar",
+				"type": "boolean",
+				"default": false
+			},
+			"enable_bookmarks": {
+				"group": "post",
+				"description": "Enable / disable bookmarks for posts. This feature is only available for desktop screens",
+				"type": "boolean",
+				"default": false
+			},
+			"show_related_posts": {
+				"group": "post",
+				"description": "Enable / disable related posts below the current article",
+				"type": "boolean",
+				"default": true
+			},
+			"post_subscription_cta_text": {
+				"type": "text",
+				"description": "Text to display in the subscription section below the current article",
+				"default": "Subscribe to our newsletter!",
+				"group": "post"
+			}
+		},
+		"posts_per_page": 9,
+		"image_sizes": {
+			"xxs": {
+				"width": 30
+			},
+			"xs": {
+				"width": 100
+			},
+			"s": {
+				"width": 300
+			},
+			"m": {
+				"width": 600
+			},
+			"l": {
+				"width": 1000
+			},
+			"xl": {
+				"width": 2000
+			}
+		}
+	},
+	"renovate": {
+		"extends": [
+			"@tryghost:theme"
+		]
+	},
+	"dependencies": {
+		"@fontsource/eb-garamond": "^4.5.2",
+		"@fontsource/inconsolata": "^4.5.7",
+		"@fontsource/oswald": "^4.5.1",
+		"@fontsource/quattrocento": "^4.5.0",
+		"@types/swiper": "^6.0.0",
+		"css-minimizer-webpack-plugin": "^4.0.0",
+		"swiper": "^8.3.2",
+		"webpack-cli": "^4.10.0",
+		"webpack-dev-server": "^4.10.1"
+	}
+}

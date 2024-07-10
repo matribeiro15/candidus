@@ -1,0 +1,31 @@
+@include xs-screen {
+	.mobile {
+		&--hidden {
+			display: none !important;
+		}
+	}
+}
+
+@include sm-screen {
+	.mobile {
+		&--hidden {
+			display: none !important;
+		}
+	}
+}
+
+@include md-screen {
+	.tablet {
+		&--hidden {
+			display: none !important;
+		}
+	}
+}
+
+@include xl-screen {
+	.desktop {
+		&--hidden {
+			display: none !important;
+		}
+	}
+}

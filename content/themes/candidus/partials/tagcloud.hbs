@@ -1,0 +1,28 @@
+{{!--
+Subscribe partial
+
+This partial is meant to be placed next to - or below articles or other content.
+It's width defaults to 100%, therefor a layout wrapper is required.
+--}}
+
+{{!-- Block layout for end of a page near the footer --}}
+<section class="tagcloud">
+  <header class="tagcloud__header p-2">
+    <h3>{{t " Topics" }}</h3>
+  </header>
+
+  <div class="px-2 pb-2 pt-1">
+    {{#get "tags"}}
+    <ul class="tagcloud__list">
+      {{#foreach tags}}
+      <li class="tagcloud__list__item px-2 py-1 m-1">
+        <a title="{{name}}" href="{{url}}">
+          {{name}}
+        </a>
+      </li>
+
+      {{/foreach}}
+    </ul>
+    {{/get}}
+  </div>
+</section>

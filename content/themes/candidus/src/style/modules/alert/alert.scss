@@ -1,0 +1,12 @@
+.alert {
+	@include rounded-sm;
+	font-weight: 600;
+	padding: 0.5rem;
+	width: 100%;
+	@each $type, $color in $color-types {
+		&#{$type} {
+			background-color: $color;
+			color: darken($color, 50%);
+		}
+	}
+}

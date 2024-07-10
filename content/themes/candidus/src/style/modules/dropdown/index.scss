@@ -1,0 +1,38 @@
+@import '../../core/mixins.scss';
+@import '../../state/themes.scss';
+
+.dropdown {
+	position: relative;
+
+	&__drawer {
+		&--absolute {
+			position: absolute;
+		}
+		&--theme {
+			@include theme-colors;
+		}
+		@include rounded-sm;
+		display: flex;
+		flex-wrap: nowrap;
+		flex-direction: column;
+		right: 0;
+		max-height: 0;
+		transition: max-height $animation-speed-base;
+		overflow: hidden;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		&__title {
+			@include text-truncate;
+			font-family: 'Oswald', sans-serif;
+			font-size: $text-sm;
+		}
+		&__text {
+			@include text-truncate;
+			font-size: $text-sm;
+		}
+		&__item {
+			text-align: left;
+			display: block;
+			max-width: 24rem;
+		}
+	}
+}

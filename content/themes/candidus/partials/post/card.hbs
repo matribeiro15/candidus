@@ -1,0 +1,91 @@
+<article class='postcard px-2 pt-2'>
+	<a href='{{url}}'>
+
+		{{#if showHeader}}
+		<header class='postcard__header mb-1'>
+
+			{{#if feature_image}}
+			<img loading='lazy' class='image--wide rounded--md' src='{{img_url feature_image}}' alt='{{title}} by {{primary_author.name}}' />
+			{{else if primary_tag.feature_image}}
+			<img loading='lazy' class='image--wide rounded--md ' src='{{primary_tag.feature_image}}' alt='{{title}} by {{primary_author.name}}' />
+			{{else}}
+			<img loading='lazy' class='image--wide rounded--md ' src='{{img_url @site.cover_image}}' alt='{{title}} by {{primary_author.name}}' />
+
+			{{/if}}
+		</header>
+		{{/if}}
+		<div class="postcard__bar">
+
+			{{!-- Show metadata about the post (featured & ) --}}
+			<div>
+				{{#if featured}}
+				<p class="postcard__featured mb-1">
+					{{t "Featured"}}
+				</p>
+				{{/if}}
+			</div>
+
+			{{!-- Show icons here based on post access --}}
+			<div>
+				{{#has visibility="members"}}
+				<span class="mb-1" title="{{t " Members only post"}}">
+					{{> icons/user}}
+				</span>
+				{{/has}}
+
+				{{#has visibility="paid"}}
+				<span title="{{t " Paid members only post"}}">
+					{{> icons/award}}
+					{{> icons/user}}
+				</span>
+				{{/has}}
+			</div>
+		</div>
+
+		{{!-- Show post content and an abstract here --}}
+		<div class='postcard__content'>
+			<h3 class='postcard__title mb-2'>
+				{{title}}
+			</h3>
+			{{#if showBody}}
+			<div class='postcard__body mb-2'>
+				{{excerpt}}
+			</div>
+			{{/if}}
+		</div>
+	</a>
+	<div class='postcard__footer'>
+
+		{{!-- Show post's primary author --}}
+		{{#primary_author}}
+		<div class='postcard__author pb-2 pt-1'>
+			<a href='{{url}}'>
+				{{#if profile_image}}
+				<img loading='lazy' class='image--rounded--xs mr-1' src='{{img_url profile_image}}' alt='{{name}}' />
+				{{else}}
+				<img loading='lazy' class='image--rounded--xs mr-1 bg-white' src='{{asset "built/images/user.png"}}' alt='{{name}}' />
+				{{/if}}
+				<div class='postcard__authordetails'>
+					<h4 class='postcard__authorname'>
+						{{name}}
+					</h4>
+					{{/primary_author}}
+					<time class='postcard__created' datetime='{{date format='DD MMMM YYYY'}}'>
+						{{date format="DD MMMM YYYY"}}
+					</time>
+				</div>
+			</a>
+		</div>
+
+		{{!-- Show post's primary tag if maintained --}}
+		{{#if primary_tag}}
+		{{#primary_tag}}
+		<a href='{{url}}'>
+			<span class='postcard__tag postcard__tag--fixed p-1 mr-2'>
+				{{name}}
+			</span>
+		</a>
+		{{/primary_tag}}
+		{{/if}}
+	</div>
+</article>

@@ -1,0 +1,108 @@
+// Screen size variables
+$xxl-screen-size: 1600px;
+$xl-screen-size: 1500px;
+$lg-screen-size: 1200px;
+$md-screen-size: 992px;
+$sm-screen-size: 767px;
+$xs-screen-size: 575px;
+
+// Color variables
+$color-primary: #3f4d63;
+$color-secondary: #f7c59f;
+$color-success: #00FF00;
+$color-warning: orange;
+$color-error: #FF0000;
+$color-black: #212121;
+$color-white: #f9f9f9;
+$color-light-white: #fefefe;
+$color-grey: #3a3b3d;
+$color-dark-grey: #242527;
+
+// Modifier variables:
+$modifier-xxs: '--xxs';
+$modifier-xs: '--xs';
+$modifier-sm: '--sm';
+$modifier-md: '--md';
+$modifier-lg: '--lg';
+$modifier-xl: '--xl';
+
+// Element types
+$type-success: '--success';
+$type-warning: '--warning';
+$type-error: '--error';
+$type-white: '--white';
+
+// Text sizes
+$text-xxs: 0.5em;
+$text-xs: 0.85em;
+$text-sm: 1em;
+$text-md: 1.25em;
+$text-lg: 1.5em;
+$text-xl: 1.75em;
+$text-xxl: 2em;
+$text-max: 2.5em;
+
+// Line heights
+$line-height-xs: 1.5rem;
+$line-height-sm: 1.75rem;
+$line-height-md: 2rem;
+$line-height-lg: 2.25rem;
+$line-height-xl: 2.5rem;
+$line-height-xxl: 4rem;
+
+// Grid variables
+$container-width: 95%;
+$col-padding: 1rem;
+$container-max-width: $xxl-screen-size;
+$col-sizes: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
+
+// Size utility variables
+$gap-sizes: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
+
+// Border variables
+$border-radius-sm: 0.25rem;
+$border-radius-md: 0.75rem;
+$border-radius-lg: 1.5rem;
+
+// Postcard & feed variables
+$post-banner-height-sm: 15rem;
+$post-banner-height-xl: 25rem;
+$post-banner-height-xxl: 30rem;
+$post-title-content-height: 2.75rem;
+$post-body-content-height: 5rem;
+$post-gradient-height: 1rem;
+$post-tag-min-width: 6rem;
+
+// Module variables
+$sidebar-size: 20rem;
+$navbar-size: 3.5rem;
+$animation-speed-base: 0.5s;
+$image-max-height: 20rem;
+$banner-max-height: 28rem;
+
+// Color types map
+// E.g. primary type => Primary color
+$color-types: (
+	$type-success: $color-success,
+	$type-warning: $color-warning,
+	$type-error: $color-error,
+);
+
+// Buttons
+$button-modifiers: (
+	$modifier-xs: 0.75rem,
+	$modifier-sm: 0.9rem,
+	$modifier-md: 1rem,
+	$modifier-lg: 1.25rem,
+	$modifier-xl: 1.5rem,
+);
+
+// Element modifiers provide sizing to elements, such as images
+$element-modifiers: (
+	$modifier-xxs: 1rem,
+	$modifier-xs: 2.5rem,
+	$modifier-sm: 5rem,
+	$modifier-md: 8.5rem,
+	$modifier-lg: 20rem,
+	$modifier-xl: 40rem,
+);

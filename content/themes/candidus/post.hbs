@@ -1,0 +1,152 @@
+{{!--
+Post - page
+
+Includes markup for the default post - page.
+- Includes the progress bar custom plugin. It can be enabled from the Ghost admin panel
+- Shows comments as of Ghost v5, if enabled by the site owner
+- Shows other articles below the post as per the following ruleset.
+-> If related posts are enabled, show posts with the same primary tag as the current one
+-> If there is no primary tag, show other posts from the same author
+--}}
+
+
+{{#contentFor "styles"}}
+<link id="prism__stylesheet" rel="stylesheet" type="text/css" data-thirdparty_root='{{asset "built/thirdparty/prism/candidus-prism-placeholder"}}'>
+{{#if @custom.enable_table_of_contents}}
+<link rel="stylesheet" type="text/css" href='{{asset "built/tableOfContents.css"}}'>
+{{/if}}
+{{/contentFor}}
+
+{{#contentFor "scripts"}}
+<script async id="prism__script" data-src='{{asset "built/thirdparty/prism/prism.js"}}'></script>
+<script async src='{{asset "built/page.bundle.js"}}'></script>
+{{/contentFor}}
+
+{{!< default}} {{> post/menu}}
+
+    {{#if @custom.enable_post_reading_progress_bar}}
+    <progress min="0" max="100" value="0" id="post__progressbar" class="progressbar"></progress>
+    {{/if}}
+
+    {{#post}}
+    <div class="container my-4">
+        {{!-- Post heading banner --}}
+        <header class="row">
+            <div class="col-12">
+                {{> "post/banner" showAuthor="true" showTags="true" isPostSite="true" }}
+            </div>
+        </header>
+
+        {{!-- Main Content --}}
+        <div class="row my-4">
+            <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1 col-xl-2 col-xxl-2"></div>
+
+            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-8 col-xxl-8">
+                {{#if access}}
+                {{#unless @custom.enable_table_of_contents}}
+                <div class="mb-4">
+                    {{> post/share}}
+                </div>
+                {{/unless}}
+
+                {{#if custom_excerpt}}
+                <p id="post__abstract" class="p-2 mb-4 page__abstract"> {{custom_excerpt}} </p>
+                {{/if}}
+                {{!-- Render TOC only if member has access and feature is enabled --}}
+                {{#if @custom.enable_table_of_contents}}
+                <div id="toc__container" class="page__toc py-2 mt-2 mb-4">
+                    <div id="toc__header" class="page__toc__header">
+                        <svg id="toc__toggle" class='icon page__toc__toggle' width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                            <path d='M10.5858 6.34317L12 4.92896L19.0711 12L12 19.0711L10.5858 17.6569L16.2427 12L10.5858 6.34317Z' fill='currentColor'></path>
+                        </svg>
+                        <h2 id="toc__heading" class="h3"> {{t "Table of contents"}} </h2>
+                    </div>
+                    {{!-- Ordered List element is targetted by 'toc__container' selector --}}
+                    <ol tabindex="-1" class="dropdown__drawer dropdown__drawer--theme"></ol>
+                </div>
+                {{/if}}
+                {{/if}}
+
+
+
+                <main id="post__container" class="page mb-2">
+                    <div class="page__content">{{content}}</div>
+                </main>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1 col-xl-2 col-xxl-2"></div>
+        </div>
+
+
+        {{!-- BEGINNING OF If post is restricted: Member section --}}
+        {{#if access}}
+        {{#contentFor "scripts"}}
+        {{#if @custom.enable_table_of_contents}}
+        <script async src='{{asset "built/tableOfContents.bundle.js"}}'></script>
+        {{/if}}
+        {{/contentFor}}
+
+        {{#if @custom.enable_table_of_contents}}
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1 col-xl-2 col-xxl-2"></div>
+            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-8 col-xxl-8">
+                {{> post/share}}
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1 col-xl-2 col-xxl-2"></div>
+        </div>
+        {{/if }}
+
+        {{!-- Comments --}}
+        {{#if comments}}
+        <div class="row my-2">
+            <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1 col-xl-2 col-xxl-2"></div>
+            <section class="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-8 col-xxl-8">
+                {{comments title="Join the discussion"}}
+            </section>
+            <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1 col-xl-2 col-xxl-2"></div>
+        </div>
+        {{/if}}
+
+        {{!-- Related articles --}}
+        {{#if @custom.show_related_posts}}
+        <section class="row">
+            <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1 col-xl-1 col-xxl-1"></div>
+            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
+
+                {{#if primary_tag}}
+                {{#get "posts" filter="primary_tag:{{primary_tag.slug}}+id:-{{comment_id}}" include="authors" limit="3" as |more_posts|}}
+                {{#if more_posts}}
+                <h4 class="p-2 my-2">{{t "Related articles"}}</h4>
+                <div class="grid--three">
+                    {{#foreach more_posts}}
+                    {{> "post/card"}}
+                    {{/foreach}}
+                </div>
+                {{/if}}
+                {{/get}}
+
+                {{else}}
+                {{#get "posts" filter="authors:{{primary_author.slug}}+id:-{{comment_id}}" include="authors" limit="3" as |more_posts|}}
+                {{#if more_posts}}
+                <h4 class="p-2 my-2">{{t "Related articles"}}</h4>
+
+                <div class="grid--three">
+                    {{#foreach more_posts}}
+                    {{> "post/card"}}
+                    {{/foreach}}
+                </div>
+                {{/if}}
+                {{/get}}
+                {{/if}}
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-1 col-lg-1 col-xl-1 col-xxl-1"></div>
+        </section>
+        {{/if}}
+
+
+        {{/if}}
+        {{!-- END OF If post is restricted: Member section --}}
+    </div>
+    <div class="mt-6">
+        {{> "subscribe" type="block"}}
+    </div>
+    {{/post}}

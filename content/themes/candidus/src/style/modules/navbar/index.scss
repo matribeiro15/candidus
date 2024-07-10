@@ -1,0 +1,55 @@
+.navbar {
+	@include dark-theme-colors;
+	@include flex-center-items;
+	position: sticky;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: $navbar-size;
+	z-index: 15;
+
+	&__logo {
+		height: 40px;
+		width: 40px;
+	}
+
+	&__brand {
+		height: 100%;
+		text-align: start;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+
+		a {
+			height: 40px;
+			width: 40px;
+		}
+	}
+
+	&__title {
+		font-family: 'Oswald', sans-serif;
+		font-weight: 600;
+		font-size: $text-xl;
+	}
+
+	&__toolbar {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		height: 100%;
+		text-align: end;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+
+		li {
+			display: inline-block;
+		}
+	}
+}
+
+@include xs-screen {
+	.navbar__title {
+		font-size: $text-lg;
+	}
+}

@@ -1,0 +1,102 @@
+$banner-title-transition: width 0.75s cubic-bezier(0.5, 0, 0.5, 1);
+
+@mixin postbanner-body-desktop {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	max-width: calc($xxl-screen-size * 0.6);
+	max-width: 50%;
+}
+
+@mixin postbanner-title-desktop {
+	line-height: $line-height-xxl;
+	font-size: $text-max;
+}
+
+.postbanner {
+	@include post-base;
+	background-color: transparent;
+
+	&:hover {
+		.postbanner__title::after {
+			transition: $banner-title-transition;
+			width: 40%;
+		}
+	}
+
+	&__image {
+		width: 100%;
+		height: $post-banner-height-sm;
+		@include adjust-image-to-parent;
+		@include xl-screen {
+			height: $post-banner-height-xxl;
+		}
+
+		@include xxl-screen {
+			height: $post-banner-height-xxl;
+		}
+	}
+
+	&__body {
+		@include theme-colors-just-text;
+		@include xl-screen {
+			@include postbanner-body-desktop;
+		}
+
+		@include xxl-screen {
+			@include postbanner-body-desktop;
+		}
+	}
+
+	&__title {
+		@include theme-colors-just-text;
+		font-size: $text-xl;
+		line-height: $line-height-xl;
+		position: relative;
+		text-transform: uppercase;
+
+		&::after {
+			@include rounded-md;
+			transition: $banner-title-transition;
+			content: '';
+			height: 4px;
+			width: 0;
+			position: absolute;
+			bottom: -0.5rem;
+			left: 0;
+			background-color: var(--color-secondary);
+		}
+		@include xl-screen {
+			@include postbanner-title-desktop;
+		}
+		@include xxl-screen {
+			@include postbanner-title-desktop;
+		}
+	}
+
+	&__content {
+		@include theme-colors-just-text;
+		line-height: $line-height-md;
+		font-size: $text-lg;
+	}
+
+	&__featured {
+		@include featured-text;
+	}
+
+	&__bullet {
+		@include rounded-max;
+		transition: all 0.75s;
+		height: 0.75rem;
+		width: 0.75rem;
+		margin: 0.25rem;
+		margin-right: 1.5rem;
+		float: right;
+		clear: right;
+		background-color: transparentize($color-grey, 0.25);
+		&--active {
+			height: 1.3rem;
+			background-color: var(--ghost-accent-color);
+		}
+	}
+}

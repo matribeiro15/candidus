@@ -1,0 +1,29 @@
+{{!
+Navigation partial
+
+Navigation takes place in the following places:
+- Primary navigation is used in the 'sidebar.hbs' partial
+- Secondary navigation is used in the 'default.hbs' partial as part of the footer
+}}
+
+{{! Secondary navigation }}
+{{#if isSecondary}}
+	{{#foreach navigation}}
+		<li class='footer__listitem nav-{{slug}}'>
+			<a title='{{label}}' href='{{url}}'>
+				{{label}}
+			</a>
+		</li>
+	{{/foreach}}
+
+{{else}}
+
+	{{! Primary navigation }}
+	{{#foreach navigation}}
+		<li class='{{link_class for=(url) class=(concat ' nav-' slug)}} sidebar__navigation__item'>
+			<a tabindex='-1' title='{{label}}' class='px-4 py-2' href='{{url absolute=' true'}}'>
+				{{label}}
+			</a>
+		</li>
+	{{/foreach}}
+{{/if}}

@@ -1,0 +1,27 @@
+.input {
+	@include rounded-sm;
+	@include theme-colors;
+	@include input;
+
+	&--white {
+		@include input;
+		@include rounded-sm;
+		background-color: $color-white;
+		color: $color-black;
+	}
+
+	&__group {
+		@include flex-center-items;
+		@include rounded-sm;
+
+		&--white {
+			background-color: $color-white;
+			color: $color-black;
+		}
+	}
+
+	&__label {
+		font-family: Oswald, 'Sans-serif';
+		font-size: $text-md;
+	}
+}

@@ -1,0 +1,27 @@
+.footer {
+	@include theme-colors;
+	&__heading {
+		font-size: $text-lg;
+	}
+	&__list {
+		@include collection;
+	}
+
+	&__listitem {
+		* {
+			text-transform: uppercase;
+			font-weight: 400;
+			font-family: 'Oswald', sans-serif;
+			display: flex;
+			align-items: center;
+			color: inherit;
+			text-decoration: none;
+		}
+	}
+
+	&__copyright {
+		text-align: center;
+		margin: auto;
+		display: block;
+	}
+}

@@ -1,0 +1,37 @@
+<nav id="navbar__container" class="navbar">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <div class="navbar__brand">
+          <a href="{{@site.url}}">
+            {{#if @site.icon}}
+            <img class="navbar__logo" src="{{@site.icon}}" alt="{{@site.title}}" />
+            {{else}}
+            <span class="navbar__title">{{@site.title}}</span>
+            {{/if}}
+          </a>
+        </div>
+      </div>
+      <div class="col-6">
+        <ul class="navbar__toolbar">
+          {{#if @custom.enable_search}}
+          <li class="ml-1">
+            {{> "buttons/searchbutton"}}
+          </li>
+          {{/if}}
+          <li class="ml-1">
+            {{> "buttons/themebutton"}}
+          </li>
+          {{#if @custom.enable_bookmarks}}
+          <li class="mobile--hidden ml-1">
+            {{> "buttons/albumbutton"}}
+          </li>
+          {{/if}}
+          <li class="ml-1">
+            {{> "buttons/menubutton"}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

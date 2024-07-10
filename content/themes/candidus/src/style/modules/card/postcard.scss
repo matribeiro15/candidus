@@ -1,0 +1,30 @@
+.postcard {
+	@include post-base;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	min-width: 100%;
+	@include xxl-screen {
+		max-width: 50vw;
+	}
+	&__author {
+		display: inline-block;
+	}
+	&__header {
+		position: relative;
+		height: auto;
+		width: 100%;
+	}
+	&__title {
+		width: 100%;
+		bottom: 0;
+		left: 0;
+	}
+	&__bar {
+		@include bar;
+	}
+
+	&__featured {
+		@include featured-text;
+	}
+}

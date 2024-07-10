@@ -1,0 +1,46 @@
+.hidden {
+  display: none !important;
+}
+
+.block {
+  display: block !important;
+}
+
+// Hide only for specific devices (not screen sizes!)
+// Keep in sync with /src/scripts/core/device/resources.ts!
+
+@include xs-screen {
+  .hidden-mobile {
+    display: none !important;
+  }
+}
+
+@include sm-screen {
+  .hidden-tablet {
+    display: none !important;
+  }
+}
+
+@include md-screen {
+  .hidden-tablet {
+    display: none !important;
+  }
+}
+
+@include lg-screen {
+  .hidden-tablet {
+    display: none !important;
+  }
+}
+
+@include xl-screen {
+  .hidden-desktop {
+    display: none !important;
+  }
+}
+
+@include xxl-screen {
+  .hidden-desktop {
+    display: none !important;
+  }
+}

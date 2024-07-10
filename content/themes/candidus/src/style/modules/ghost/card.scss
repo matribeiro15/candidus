@@ -1,0 +1,39 @@
+.kg-card {
+	@include rounded-md;
+	align-self: center;
+	max-width: 100%;
+	width: 100vw;
+	margin: $text-md 0;
+}
+
+.kg-bookmark-card a.kg-bookmark-container {
+	@include theme-colors;
+	@include rounded-md;
+	@include xs-screen {
+		flex-direction: column;
+	}
+	@include sm-screen {
+		flex-direction: column;
+	}
+	display: flex;
+	flex-direction: row;
+	border: 0 !important;
+}
+
+.kg-bookmark-title {
+	font-family: 'Oswald', sans-serif !important;
+}
+
+.kg-bookmark-description {
+	font-size: $text-sm !important;
+}
+
+.kg-callout-card {
+	font-size: $text-md;
+}
+
+.kg-gallery-container {
+	max-width: $md-screen-size;
+	display: block;
+	margin: auto;
+}

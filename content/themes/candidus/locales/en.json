@@ -1,0 +1,70 @@
+{
+	"Show a card grid of posts": "Show a card grid of posts",
+	"Show a feed list of posts": "Show a feed list of posts",
+	"Load more posts": "Load more posts",
+
+	"{authorname} didn't publish anything yet": "{authorname} didn't publish anything yet",
+	"{authorname} published 1 article": "{authorname} published 1 article",
+	"{authorname} published % articles": "{authorname} published % articles",
+	"Writing from": "Writing from",
+	"{authorname}'s publications": "{authorname}'s publications",
+
+	"Tags": "Tags",
+	"Navigation": "Navigation",
+	"Follow {site}": "Follow {site}",
+	"Powered by Ghost & Candidus Theme": "Powered by Ghost & Candidus Theme",
+
+	"An error has occured": "An error has occured",
+	"404 - Page not found": "404 - Page not found",
+	"The page you are looking for does not exist": "The page you are looking for does not exist",
+	"To the previous page": "To the previous page",
+	"To the front page": "To the front page",
+
+	"Latest publications": "Latest publications",
+	"Members only post": "Members only post",
+	"Paid members only post": "Paid members only post",
+
+	"Close annoucement bar": "Close annoucement bar",
+
+	"Welcome back": "Welcome back",
+	"Sign up": "Sign up",
+	"Log in": "Log in",
+	"Email Address": "Email Address",
+	"Enter your email address": "Email-address",
+	"Username": "Username",
+	"Enter your username": "Enter your username",
+	"Login": "Login",
+	"Not signed up yet": "Not signed up yet",
+	"Create an account": "Create an account",
+	"Already a member": "Already a member",
+	"Logging you in": "Logging you in",
+	"Sending Email": "Sending Email",
+	"Signing you up": "Signing you up",
+	"Login link sent! Check your mailbox": "Login link sent! Check your mailbox",
+	"Signup successful! Check your mailbox": "Signup successful! Check your mailbox",
+	"Newsletter": "Newsletter",
+	"Subscribe Button": "Subscribe Button",
+	"Coming soon": "Coming soon",
+	"Topics": "Topics",
+
+	"Featured": "Featured",
+	"1 min read": "1 min read",
+	"% min read": "% min read",
+	"Table of contents": "Table of contents",
+	"show/hide": "show/hide",
+	"This post is only available to subscribers": "This post is only available to members",
+	"Share this article": "Share this article",
+	"Share this article on Facebook": "Share this article on Facebook",
+	"Share this article on Twitter": "Share this article on Twitter",
+	"Share this article on Linkedin": "Share this article on Linkedin",
+	"Share this article on Reddit": "Share this article on Reddit",
+
+	"Tagged with": "Tagged with",
+
+	"Toggle sidebar menu": "Toggle sidebar menu",
+	"Toggle search menu": "Toggle search menu",
+	"Toggle dark theme": "Toggle between dark and light theme",
+
+	"Nothing bookmarked yet": "Nothing bookmarked yet",
+	"Related articles": "Related articles"
+}

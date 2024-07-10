@@ -1,0 +1,34 @@
+.socialbar {
+	@include bar;
+	@include rounded-md;
+	list-style: none;
+
+	&--alignment-right {
+		margin-left: auto;
+		margin-right: 0;
+	}
+
+	&--theme {
+		@include theme-colors;
+
+
+		@include xs-screen {
+			width: 100%;
+		}
+
+		@include sm-screen {
+			width: 100%;
+		}
+
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		& a {
+			height: 24px;
+		}
+	}
+}

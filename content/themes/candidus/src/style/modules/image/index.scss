@@ -1,0 +1,45 @@
+.image {
+	&--responsive {
+		max-width: 100%;
+		height: auto;
+	}
+	&--wide {
+		width: 100%;
+		height: $image-max-height;
+		-o-object-fit: cover;
+		object-fit: cover;
+	}
+
+	&--banner {
+		width: 100%;
+		height: $banner-max-height;
+		-o-object-fit: cover;
+		object-fit: cover;
+	}
+
+	&--screen {
+		height: 100%;
+		width: 100vw;
+		-o-object-fit: cover;
+		object-fit: cover;
+	}
+
+	@each $modifier, $size in $element-modifiers {
+		&#{$modifier} {
+			width: $size;
+		}
+		&--square#{$modifier} {
+			width: $size !important;
+			height: $size !important;
+			-o-object-fit: cover;
+			object-fit: cover;
+		}
+		&--rounded#{$modifier} {
+			@include rounded-max;
+			width: $size !important;
+			height: $size !important;
+			-o-object-fit: cover;
+			object-fit: cover;
+		}
+	}
+}

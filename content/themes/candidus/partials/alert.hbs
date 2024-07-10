@@ -1,0 +1,25 @@
+{{!--
+Alert partial
+
+Used to indicate whether a subscription or login was successful or not.
+The content of the alert must be injected into the partial block from
+the main handlebars file.
+
+See https://handlebarsjs.com/guide/partials.html#partial-blocks
+--}}
+
+<div role='alert' class='alert alert--{{type}} '>
+  {{#if title}}
+  <header class="alert__header">
+    <h4 class="alert__title">{{title}}</h4>
+  </header>
+  {{/if}}
+  <div class="alert__body">
+    {{#if text}}
+    <p>{{text}}</p>
+    {{/if}}
+    <div class="alert__custom-content">
+      {{> @partial-block}}
+    </div>
+  </div>
+</div>

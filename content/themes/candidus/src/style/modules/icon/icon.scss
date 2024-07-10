@@ -1,0 +1,45 @@
+.icon {
+	@include theme-colors-just-text;
+	height: 24px;
+	width: 24px;
+
+	&--post-heading {
+		z-index: -1;
+		height: 65%;
+		width: auto;
+		position: absolute;
+		top: 17.5%;
+		left: -35px;
+		opacity: 0;
+		transition: all $animation-speed-base;
+	}
+	&--white {
+		color: $color-white;
+		fill: $color-white;
+	}
+	&--primary {
+		color: var(--color-primary);
+		fill: var(--color-primary);
+	}
+}
+
+.gradient--instagram {
+	fill: -moz-linear-gradient(
+		45deg,
+		#f09433 0%,
+		#e6683c 25%,
+		#dc2743 50%,
+		#cc2366 75%,
+		#bc1888 100%
+	);
+	fill: -webkit-linear-gradient(
+		45deg,
+		#f09433 0%,
+		#e6683c 25%,
+		#dc2743 50%,
+		#cc2366 75%,
+		#bc1888 100%
+	);
+	fill: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+}

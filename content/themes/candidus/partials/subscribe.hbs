@@ -1,0 +1,153 @@
+{{!--
+Subscribe partial
+
+This partial is meant to be placed next to - or below articles or other content.
+It's width defaults to 100%, therefor a layout wrapper is required.
+--}}
+
+{{!-- Block layout for end of a page near the footer --}}
+{{#match type "=" "block"}}
+{{#if @site.members_enabled}}
+<section class="subscribe--block pt-6 pb-8 mt-10">
+  <header class="subscribe__header p-2">
+    <h3 class="h1">{{@custom.post_subscription_cta_text}}</h3>
+  </header>
+
+  <div class="container ">
+    <form class="subscribe__form" data-members-form="subscribe">
+      <div class="row">
+        <div class="col-sm-12 col-md-1 col-lg-2 col-xl-3 col-xxl-3"></div>
+        <div class="col-sm-12 col-md-7 col-lg-6 col-xl-4 col-xxl-4">
+          <label class='input__label hidden' for='subscribe' aria-hidden='true'>
+            {{t "Enter your email address"}}
+          </label>
+          <div class='input__group input__group--white mb-2'>
+            <input title={{t "Enter your email address" }} id='subscribe' class='input--white' placeholder="{{t " Enter your email address" }}" name='subscribe' type='email' data-members-email
+              required />
+            <div class='mr-1 mt-1'>
+              {{> "icons/arrow-right"}}
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-2 col-xl-2 col-xxl-2">
+          <input class="btn btn--md btn--block btn--white--outline mb-2" value="{{t " Subscribe"}}" type="submit" aria-label="{{t " Subscribe Button" }}" data-umami-event="signup-button" >
+        </div>
+        <div class="col-sm-12 col-md-1 col-lg-2 col-xl-3 col-xxl-3"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <footer class="content--centered">
+            <div id="subscribe-loading" class="p-1 mx-1 text--secondary">
+              <p>{{t "Sending Email"}} ...</p>
+            </div>
+            <div id="subscribe-error" class="p-1 mx-1 text--error">
+              <p data-members-error></p>
+            </div>
+            <div id="subscribe-success" class="p-1 mx-1 text--success">
+              <p>{{t "Signup successful! Check your mailbox"}}</p>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+{{/if}}
+
+{{else}}
+{{!-- Default card layout --}}
+<section class="subscribe__wrapper hidden-mobile hidden-tablet">
+  {{#if @custom.subscription_card_image}}
+  <img class="subscribe__image" src="{{@custom.subscription_card_image}}" />
+  {{/if}}
+  <div class="subscribe__background {{#if @custom.subscription_card_image}} subscribe__background--transparent {{/if}} "></div>
+  <div class="subscribe__card">
+    <header class="subscribe__header p-2">
+      <h3 class="mb-2">{{t "Newsletter"}}</h3>
+
+      {{!-- Show custom subscription texts based on whether members are enabled or not --}}
+      {{#if @site.members_enabled}}
+      <p class="subscribe__text">{{@custom.subscription_card_text}}</p>
+      {{else}}
+      <p class="subscribe__text">{{@custom.subscription_card_text_disabled}}</p>
+      {{/if}}
+
+    </header>
+
+    {{!-- Show form based on whether members are enabled or not --}}
+    {{#if @site.members_enabled}}
+    <form class="subscribe__form" data-members-form="subscribe">
+      <div class="subscribe__body px-2 pb-2 pt-1">
+        <label class='input__label hidden' for='subscribe' aria-hidden='true'>
+          {{t "Enter your email address"}}
+        </label>
+        <div class='input__group input__group--white'>
+          <input title={{t "Enter your email address" }} id='subscribe' class='input--white' placeholder="{{t " Enter your email address" }}" name='subscribe' type='email' data-members-email
+            required />
+          <div class='mr-1 mt-1'>
+            {{> "icons/arrow-right"}}
+          </div>
+        </div>
+        <input class="btn btn--lg btn--block btn--white--outline mt-2" value="{{t " Subscribe"}}" type="submit" aria-label="{{t " Subscribe Button" }}">
+      </div>
+      <footer class="mb-1">
+        <div id="subscribe-loading" class="p-1 mx-1">
+          {{#> alert type="accent"}}
+          <p>{{t "Sending Email"}} ...</p>
+          {{/alert}}
+        </div>
+        <div id="subscribe-error" class="p-1 mx-1">
+          {{#> alert type="error"}}
+          <p data-members-error></p>
+          {{/alert}}
+        </div>
+        <div id="subscribe-success" class="p-1 mx-1">
+          {{#> alert type="success"}}
+          <p>{{t "Signup successful! Check your mailbox"}}</p>
+          {{/alert}}
+        </div>
+      </footer>
+
+    </form>
+
+    {{!-- If members are disabled, show either social media or default mail icon --}}
+    {{else}}
+    <div class="content--centered ">
+      {{#match @custom.select_social_media_when_subscription_is_disabled "=" "Twitter"}}
+      <a href="{{twitter_url @site.twitter}}" target="_blank">
+        <svg class="mx-1" width='42px' height='42px' role='img' aria-label='twitter'>
+          <use class="icon icon--white" href='#twitter'></use>
+        </svg>
+      </a>
+      {{/match}}
+
+      {{#match @custom.select_social_media_when_subscription_is_disabled "=" "Facebook"}}
+      <a href="{{facebook_url @site.facebook}}" target="_blank">
+        <svg class="mx-1" width='42px' height='42px' role='img' aria-label='facebook'>
+          <use class="icon icon--white" href='#facebook'></use>
+        </svg>
+      </a>
+      {{/match}}
+
+      {{#match @custom.select_social_media_when_subscription_is_disabled "=" "DevTo"}}
+      <a href="{{@custom.social_media_url_when_subscription_is_disabled}}" target="_blank">
+        <svg class="mx-1" width='42px' height='42px' role='img' aria-label='devto'>
+          <use class="icon icon--white" href='#devto'></use>
+        </svg>
+      </a>
+      {{/match}}
+
+      {{#match @custom.select_social_media_when_subscription_is_disabled "=" "None"}}
+      <svg class="mx-1" width='42px' height='42px' role='img' aria-label='mail'>
+        <use class="icon icon--white" href='#mail'></use>
+      </svg>
+      {{/match}}
+
+
+    </div>
+    {{/if}}
+  </div>
+</section>
+
+{{/match}}

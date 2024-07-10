@@ -1,0 +1,184 @@
+// Margin and padding mofifiers
+.mx-auto {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.content--centered {
+	@include content-centered;
+}
+
+.responsive-left-alignment {
+	text-align: left;
+	margin-right: 0;
+	margin-left: 0;
+}
+
+.responsive-right-alignment {
+	text-align: right;
+	margin-right: 0;
+	margin-left: 0;
+}
+
+@include xs-screen {
+	.responsive-left-alignment {
+		@include content-centered;
+	}
+
+	.responsive-right-alignment {
+		@include content-centered;
+	}
+}
+
+@include sm-screen {
+	.responsive-left-alignment {
+		@include content-centered;
+	}
+
+	.responsive-right-alignment {
+		@include content-centered;
+	}
+}
+
+@include md-screen {
+	.responsive-left-alignment {
+		@include content-centered;
+	}
+
+	.responsive-right-alignment {
+		@include content-centered;
+	}
+}
+
+@each $size in $gap-sizes {
+	.ml-#{$size} {
+		margin-left: calc($size * 0.5) + rem !important;
+	}
+
+	.mr-#{$size} {
+		margin-right: calc($size * 0.5) + rem !important;
+	}
+
+	.mt-#{$size} {
+		margin-top: calc($size * 0.5) + rem !important;
+	}
+
+	.mb-#{$size} {
+		margin-bottom: calc($size * 0.5) + rem !important;
+	}
+
+	.mx-#{$size} {
+		margin-right: calc($size * 0.5) + rem !important;
+		margin-left: calc($size * 0.5) + rem !important;
+	}
+
+	.my-#{$size} {
+		margin-top: calc($size * 0.5) + rem !important;
+		margin-bottom: calc($size * 0.5) + rem !important;
+	}
+
+	.m-#{$size} {
+		margin: calc($size * 0.5) + rem !important;
+	}
+
+	.pl-#{$size} {
+		padding-left: calc($size * 0.5) + rem !important;
+	}
+
+	.pr-#{$size} {
+		padding-right: calc($size * 0.5) + rem !important;
+	}
+
+	.pt-#{$size} {
+		padding-top: calc($size * 0.5) + rem !important;
+	}
+
+	.pb-#{$size} {
+		padding-bottom: calc($size * 0.5) + rem !important;
+	}
+
+	.px-#{$size} {
+		padding-left: calc($size * 0.5) + rem !important;
+		padding-right: calc($size * 0.5) + rem !important;
+	}
+
+	.py-#{$size} {
+		padding-top: calc($size * 0.5) + rem !important;
+		padding-bottom: calc($size * 0.5) + rem !important;
+	}
+
+	.p-#{$size} {
+		padding: calc($size * 0.5) + rem !important;
+	}
+}
+
+.text--secondary {
+	color: var(--color-secondary);
+}
+
+.text--success {
+	color: $color-success;
+}
+
+.text--error {
+	color: $color-error;
+}
+
+.bg-white {
+	background-color: $color-white;
+}
+
+.text-center {
+	text-align: center;
+}
+
+// Rounded modifiers
+.rounded--sm {
+	@include rounded-sm;
+}
+
+.rounded--md {
+	@include rounded-md;
+}
+
+.rounded--lg {
+	@include rounded-lg;
+}
+
+.rounded--top--md {
+	@include rounded-top-md;
+}
+
+.text--underlined {
+	@include underline-color-secondary;
+}
+
+// Font size modifiers
+.h1 {
+	font-size: $text-max;
+}
+
+.h2,
+.h2>* {
+	font-size: $text-xxl;
+}
+
+.h3,
+.h3>* {
+	font-size: $text-xl;
+}
+
+.h4,
+.h4>* {
+	font-size: $text-lg;
+}
+
+.h5 {
+	font-size: $text-md;
+	text-transform: uppercase;
+}
+
+.h6 {
+	font-size: $text-md;
+}

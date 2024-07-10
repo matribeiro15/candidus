@@ -1,0 +1,107 @@
+@mixin page-base {
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-top: $text-md;
+		position: relative;
+		z-index: 0;
+		cursor: pointer;
+	}
+
+	p {
+		font-size: $text-md;
+		@include xl-screen {
+			font-size: $text-lg;
+		}
+		@include xxl-screen {
+			font-size: $text-lg;
+		}
+		margin: $text-sm 0;
+	}
+
+	figcaption,
+	figcaption>* {
+		font-size: $text-sm !important;
+		margin-bottom: $text-lg;
+		text-align: center;
+	}
+
+	details {
+		@include rounded-md;
+		@include theme-colors;
+		margin-bottom: $text-md;
+		padding: $col-padding;
+
+		summary {
+			font-family: 'Oswald', sans-serif;
+			font-size: $text-lg;
+		}
+	}
+
+	code,
+	pre {
+		@include rounded-sm;
+		@include theme-colors;
+		font-family: 'Inconsolata' !important;
+		font-size: $text-sm;
+	}
+
+	pre {
+		overflow-x: auto;
+		padding: 1rem;
+		margin: $text-sm 0;
+
+		code {
+			padding: 0;
+		}
+	}
+
+	code {
+		padding: 0.15rem 0.3rem;
+	}
+
+	a:not(.kg-bookmark-container) {
+		@include underline-color-secondary;
+	}
+
+	ul:not(.socialbar),
+	ol {
+		padding-left: 1.25rem;
+		font-size: $text-md;
+		margin: $text-sm 0;
+		@include xl-screen {
+			font-size: $text-lg;
+		}
+		@include xxl-screen {
+			font-size: $text-lg;
+		}
+	}
+
+	li {
+		margin-bottom: $text-xxs;
+	}
+
+	table {
+		width: 100%;
+		font-size: $text-md;
+		margin: $text-sm 0;
+		border-collapse: collapse;
+		overflow-y: auto;
+	}
+
+	th {
+		padding: $text-xs;
+		background-color: var(--color-primary);
+		color: $color-white;
+		border-bottom: 2px solid var(--color-primary);
+	}
+
+	td {
+		@include theme-colors;
+		padding: $text-xs;
+	}
+}
