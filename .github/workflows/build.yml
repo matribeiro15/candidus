@@ -9,6 +9,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions: write-all
+    outputs:
+      version: ${{ steps.autotag.outputs.version }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -36,24 +38,41 @@ jobs:
           mkdir dist
           zip -r dist/candidus.zip . -x "node_modules/*" -x "dist/*" -x "src/*" -x "tsconfig.json" -x "webpack.config.js" -x "zip.sh" -x "test/*" -x .env
 
-      - name: Release /dist/candidus.zip as a latest release asset
+      - name: Upload ZIP artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: candidus-theme
+          path: content/themes/candidus/dist/candidus.zip
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+      - name: Download ZIP artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: candidus-theme
+          path: dist
+
+      - name: Release as latest
         uses: svenstaro/upload-release-action@v2
         with:
           release_name: "Latest"
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: content/themes/candidus/dist/candidus.zip
+          file: dist/candidus.zip
           tag: latest
           overwrite: true
           file_glob: true
           make_latest: false
 
-      - name: Release /dist/candidus.zip as a version release asset
+      - name: Release as version
         uses: svenstaro/upload-release-action@v2
         with:
-          release_name: "Version ${{ steps.autotag.outputs.version }}"
+          release_name: "Version ${{ needs.build.outputs.version }}"
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: content/themes/candidus/dist/candidus.zip
-          tag: ${{ steps.autotag.outputs.version }}
+          file: dist/candidus.zip
+          tag: ${{ needs.build.outputs.version }}
           overwrite: true
           file_glob: true
           make_latest: false
