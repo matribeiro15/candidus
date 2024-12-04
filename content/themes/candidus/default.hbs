@@ -20,55 +20,6 @@
   {{/if}}
   {{{block "styles"}}}
 
-  {{!--
-  Colors injected by the user augment the theme's primary and secondary coloring.
-  - Primary colors are used for cards, feed, toolbars and other recurring elements.
-  - Secondary colors accent semi-important areas, such as links or CTA footers
-  --}}
-  <style>
-    :root {
-        {
-          {
-          #if @custom.primary_color
-        }
-      }
-
-      --color-primary: {
-          {
-          @custom.primary_color
-        }
-      }
-
-      ;
-
-        {
-          {
-          /if
-        }
-      }
-
-        {
-          {
-          #if @custom.secondary_color
-        }
-      }
-
-      --color-secondary: {
-          {
-          @custom.secondary_color
-        }
-      }
-
-      ;
-
-        {
-          {
-          /if
-        }
-      }
-    }
-  </style>
-
   {{ghost_head}}
 </head>
 

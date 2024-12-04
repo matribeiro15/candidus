@@ -65,16 +65,6 @@
 	"config": {
 		"card_assets": true,
 		"custom": {
-			"primary_color": {
-				"type": "color",
-				"description": "Primary color for your publication. Used for posts, cards and highlights",
-				"default": "#3f4d63"
-			},
-			"secondary_color": {
-				"type": "color",
-				"description": "Secondary color for your publication. Used to emphasize elements and content",
-				"default": "#f7c59f"
-			},
 			"enable_search": {
 				"type": "boolean",
 				"description": "Enable built-in search for Ghost. Toggles the search icon in the header section",
