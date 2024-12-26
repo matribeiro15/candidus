@@ -134,6 +134,12 @@
 				"type": "boolean",
 				"default": false
 			},
+			"enable_chatgpt": {
+				"group": "post",
+				"description": "Enable / disable sending the current article to ChatGPT and allow users to ask questions",
+				"type": "boolean",
+				"default": true
+			},
 			"show_related_posts": {
 				"group": "post",
 				"description": "Enable / disable related posts below the current article",

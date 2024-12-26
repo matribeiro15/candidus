@@ -27,6 +27,11 @@
             {{> "buttons/albumbutton"}}
           </li>
           {{/if}}
+          {{#if @custom.enable_chatgpt}}
+          <li>
+            {{> "buttons/chatgptbutton"}}
+          </li>
+          {{/if}}
           <li class="ml-1">
             {{> "buttons/menubutton"}}
           </li>

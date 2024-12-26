@@ -5,6 +5,7 @@ import PostShareControl from '../scripts/modules/posts/PostShareControl';
 import SyntaxHighlighter from '../scripts/plugins/SyntaxHighlighter';
 import PostCodeToolbarControl from '../scripts/modules/posts/PostCodeToolbarControl';
 import PostImageZoomControl from '../scripts/modules/posts/PostImageZoomControl';
+import PostChatGPTControl from '../scripts/modules/posts/PostChatGPTControl';
 
 const postReadingProgressBarPlugin = new PostReadingProgressBarPlugin({
 	postReadingBar: '#post__progressbar',
@@ -45,10 +46,15 @@ const postCodeToolbarControl = new PostCodeToolbarControl({
 
 const postImageZoomControl = new PostImageZoomControl()
 
+const postChatGptControl = new PostChatGPTControl({
+	buttonSelector: '#post__chatgpt__button'
+})
+
 postReadingProgressBarPlugin.init();
 postSocialControl.init();
 textToolbar.init();
 postShareControl.init();
 syntaxHighlighter.init();
 postCodeToolbarControl.init();
-postImageZoomControl.init()
+postImageZoomControl.init();
+postChatGptControl.init();
