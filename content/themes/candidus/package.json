@@ -3,7 +3,7 @@
 	"sideEffects": false,
 	"description": "An approachable and minimalistic blogging theme for Ghost",
 	"demo": "https://blog.q-bit.me",
-	"version": "1.0.1",
+	"version": "1.1.0",
 	"engines": {
 		"ghost": ">=5.0.0"
 	},
