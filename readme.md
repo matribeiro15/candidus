@@ -11,15 +11,14 @@
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/tq-bit/candidus?style=plastic&logo=git"/>
     <img alt="GitHub release tag" src="https://img.shields.io/github/v/release/tq-bit/candidus?style=plastic&logo=github"/>
   </div>
+  <a href="(https://tq-bit.github.io/candidus-docs)">Documentation</a>
 </div>
 
 ## About the Project
 
 Candidus is the result of several months of careful planning and dedicated work. It's a versatile Ghost theme with a minimalistic and approachable design, but a lot of power under the hood.
 
-Candidus has all the features I liked about other websites & themes.
-
-A few I wanted my blog are:
+A few of these include:
 
 - Bookmarks
 - Dark-theme
