@@ -64,7 +64,7 @@
 		padding: 0.15rem 0.3rem;
 	}
 
-	a:not(.kg-bookmark-container) {
+	a:not(.kg-bookmark-container, .kg-file-card-container) {
 		@include underline-color-secondary;
 	}
 
