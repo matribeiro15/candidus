@@ -43,6 +43,6 @@
 }
 
 @mixin theme-colors-just-text {
-	color: theme-color('text');
-	fill: theme-color('text');
+	color: theme-color('text') !important;
+	fill: theme-color('text') !important;
 }
