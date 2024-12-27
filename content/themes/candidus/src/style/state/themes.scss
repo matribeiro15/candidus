@@ -25,21 +25,21 @@
 }
 
 @mixin theme-colors {
-	background-color: theme-color('bg');
-	color: theme-color('text');
-	fill: theme-color('text');
+	background-color: theme-color('bg') !important;
+	color: theme-color('text') !important;
+	fill: theme-color('text') !important;
 }
 
 @mixin light-theme-colors {
-	background-color: theme-color('light-bg');
-	color: theme-color('light-text');
-	fill: theme-color('light-text');
+	background-color: theme-color('light-bg') !important;
+	color: theme-color('light-text') !important;
+	fill: theme-color('light-text') !important;
 }
 
 @mixin dark-theme-colors {
-	background-color: theme-color('dark-bg');
-	color: theme-color('dark-text');
-	fill: theme-color('dark-text');
+	background-color: theme-color('dark-bg') !important;
+	color: theme-color('dark-text') !important;
+	fill: theme-color('dark-text') !important;
 }
 
 @mixin theme-colors-just-text {

@@ -32,6 +32,11 @@
 	font-size: $text-md;
 }
 
+.kg-file-card {
+	@include theme-colors;
+	@include rounded-md;
+}
+
 .kg-gallery-container {
 	max-width: $md-screen-size;
 	display: block;
