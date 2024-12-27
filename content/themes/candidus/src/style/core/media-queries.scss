@@ -29,7 +29,13 @@
 }
 
 @mixin xs-screen {
-  @media only screen and (max-width: $xs-screen-size) {
+  @media only screen and (max-width: $xs-screen-size) and (min-width: $xxs-screen-size) {
+    @content;
+  }
+}
+
+@mixin xxs-screen {
+  @media only screen and (max-width: $xxs-screen-size) {
     @content;
   }
 }

@@ -9,6 +9,9 @@
 	}
 	&__author {
 		display: inline-block;
+		@include xxs-screen {
+			margin-bottom: 2.5rem;
+		}
 	}
 	&__header {
 		position: relative;
