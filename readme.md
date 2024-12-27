@@ -10,8 +10,8 @@
     <img alt="License" src="https://img.shields.io/github/license/tq-bit/candidus?style=plastic&logo=MIT"/>
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/tq-bit/candidus?style=plastic&logo=git"/>
     <img alt="GitHub release tag" src="https://img.shields.io/github/v/release/tq-bit/candidus?style=plastic&logo=github"/>
-    <a href="https://tq-bit.github.io/candidus-docs">Documentation</a>
   </div>
+    <a href="https://tq-bit.github.io/candidus-docs">Documentation</a>
 </div>
 
 ## About the Project
