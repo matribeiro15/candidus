@@ -61,7 +61,7 @@
 
             {{#if @site.facebook}}
             <li class='footer__listitem my-1'>
-              <a href="{{facebook_url @site.facebook}}" target="_blank" data-umami-event="follow-facebook" >
+              <a href="{{facebook_url @site.facebook}}" target="_blank" data-umami-event="follow-facebook">
                 <svg class='mr-1' width='18px' height='18px' role='img' aria-label='facebook'>
                   <use class="icon" href='#facebook'></use>
                 </svg>
@@ -82,6 +82,7 @@
           </ul>
         </div>
 
+        {{!-- Footer / Ghost custom footer --}}
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-4">
           {{ghost_foot}}
         </div>
@@ -93,7 +94,9 @@
       {{@site.title}} &copy; {{date format="YYYY"}}
     </small>
     <small class="footer__copyright mt-1">
-      {{t "Powered by Ghost & Candidus Theme"}}
+      <a href="https://ghost.org/" target="_blank">
+        {{t "Powered by Ghost & Candidus Theme"}}
+      </a>
     </small>
   </footer>
 
