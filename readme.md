@@ -5,13 +5,11 @@
 <div align="center">
 
   <h1 align="center">Candidus</h1>
-
-  <p align="center">
-    An approachable and minimalistic blogging theme for Ghost
-  </p>
+  <p>An approachable and minimalistic blogging theme for Ghost</p>
   <div align="center">
-    <img alt="License" src="https://img.shields.io/github/license/tq-bit/ville-de-cuisines?style=plastic&logo=MIT"/>
+    <img alt="License" src="https://img.shields.io/github/license/tq-bit/cabdidus?style=plastic&logo=MIT"/>
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/tq-bit/candidus?style=plastic&logo=git"/>
+    <img alt="GitHub release tag" src="https://img.shields.io/github/v/release/tqbit/candidus?style=plastic&logo=github"/>
   </div>
 </div>
 
@@ -19,28 +17,28 @@
 
 Candidus is the result of several months of careful planning and dedicated work. It's a versatile Ghost theme with a minimalistic and approachable design, but a lot of power under the hood.
 
-Candidus has all the features I wanted my blog to have:
+Candidus has all the features I liked about other websites & themes.
+
+A few I wanted my blog are:
 
 - Bookmarks
 - Dark-theme
 - Reading indicators
-- Built-in support for [Umami Analytics](https://umami.is/)
-- Customizable colors
+- Customizable texts
+- A direct link to ChatGPT
 
 and many more.
-
-Figure something to be missing? Candidus is fully Open Source! You can either hack your own Candidus version or, even better, open a pull request and make the feature available for everybody!
 
 ### Built With
 
 - [Handlebars](https://handlebarsjs.com/guide/)
+- [SCSS](https://sass-lang.com/)
 - [Typescript / Javascript](https://www.typescriptlang.org/)
 - feat. [Ghost CMS](https://ghost.org/)
-- feat [Umami Analytics](https://umami.is/)
 
 ## Get started
 
-You can download the latest release [here](https://github.com/tq-bit/candidus/releases/download/latest/candidus.zip)
+[Link to latest release](https://github.com/tq-bit/candidus/releases/download/latest/candidus.zip)
 
 ### Quickstart
 
