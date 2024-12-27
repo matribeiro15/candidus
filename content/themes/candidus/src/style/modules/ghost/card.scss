@@ -37,6 +37,10 @@
 	@include rounded-md;
 }
 
+.kg-file-card a.kg-file-card-container {
+	@include theme-colors;
+}
+
 .kg-gallery-container {
 	max-width: $md-screen-size;
 	display: block;
