@@ -7,9 +7,9 @@
   <h1 align="center">Candidus</h1>
   <p>An approachable and minimalistic blogging theme for Ghost</p>
   <div align="center">
-    <img alt="License" src="https://img.shields.io/github/license/tq-bit/cabdidus?style=plastic&logo=MIT"/>
+    <img alt="License" src="https://img.shields.io/github/license/tq-bit/candidus?style=plastic&logo=MIT"/>
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/tq-bit/candidus?style=plastic&logo=git"/>
-    <img alt="GitHub release tag" src="https://img.shields.io/github/v/release/tqbit/candidus?style=plastic&logo=github"/>
+    <img alt="GitHub release tag" src="https://img.shields.io/github/v/release/tq-bit/candidus?style=plastic&logo=github"/>
   </div>
 </div>
 
