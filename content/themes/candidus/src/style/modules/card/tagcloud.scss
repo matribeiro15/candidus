@@ -28,13 +28,6 @@
       a {
         color: $color-white !important;
       }
-      &:hover {
-        background-color: $color-white;
-        color: var(--color-primary) !important;
-        a {
-          color: var(--color-primary) !important;
-        }
-      }
     }
   }
 }
