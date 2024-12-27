@@ -27,6 +27,7 @@
       transition: all calc($animation-speed-base/2);
       a {
         color: $color-white !important;
+        text-decoration: none;
       }
     }
   }
