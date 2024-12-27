@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = (env) => {
 	return {
@@ -71,6 +72,12 @@ module.exports = (env) => {
 				`...`,
 				new CssMinimizerPlugin(),
 				new TerserPlugin(),
+				new CopyWebpackPlugin({
+					patterns: [{
+						from: path.resolve(__dirname, 'src/thirdparty'),
+						to: path.resolve(__dirname, 'assets/built/thirdparty')
+					}]
+				})
 			],
 			// activate this before building
 			minimize: true,
