@@ -1,6 +1,6 @@
 {
-	"Show a card grid of posts": "Show a card grid of posts",
-	"Show a feed list of posts": "Show a feed list of posts",
+	" Show a card grid of posts": " Show a card grid of posts",
+	" Show a feed list of posts": " Show a feed list of posts",
 	"Load more posts": "Load more posts",
 
 	"{authorname} didn't publish anything yet": "{authorname} didn't publish anything yet",
@@ -29,8 +29,9 @@
 	"Welcome back": "Welcome back",
 	"Sign up": "Sign up",
 	"Log in": "Log in",
+	"Sign out": "Sign out",
 	"Email Address": "Email Address",
-	"Enter your email address": "Email-address",
+	" Enter your email address": " Email-address",
 	"Username": "Username",
 	"Enter your username": "Enter your username",
 	"Login": "Login",
@@ -43,7 +44,7 @@
 	"Login link sent! Check your mailbox": "Login link sent! Check your mailbox",
 	"Signup successful! Check your mailbox": "Signup successful! Check your mailbox",
 	"Newsletter": "Newsletter",
-	"Subscribe Button": "Subscribe Button",
+	" Subscribe Button": " Subscribe Button",
 	"Coming soon": "Coming soon",
 	"Topics": "Topics",
 
@@ -54,15 +55,15 @@
 	"show/hide": "show/hide",
 	"This post is only available to subscribers": "This post is only available to members",
 	"Share this article": "Share this article",
-	"Share this article on Facebook": "Share this article on Facebook",
-	"Share this article on Twitter": "Share this article on Twitter",
-	"Share this article on Linkedin": "Share this article on Linkedin",
-	"Share this article on Reddit": "Share this article on Reddit",
+	" Share this article on Facebook": " Share this article on Facebook",
+	" Share this article on Twitter": " Share this article on Twitter",
+	" Share this article on Linkedin": " Share this article on Linkedin",
+	" Share this article on Reddit": " Share this article on Reddit",
 
 	"Tagged with": "Tagged with",
 
 	"Toggle sidebar menu": "Toggle sidebar menu",
-	"Chat with this article (opens ChatGPT in a new tab)": "Chat with this article (opens ChatGPT in a new tab)",
+	" Chat with this article (opens ChatGPT in a new tab)": " Chat with this article (opens ChatGPT in a new tab)",
 	"Toggle search menu": "Toggle search menu",
 	"Toggle dark theme": "Toggle between dark and light theme",
 

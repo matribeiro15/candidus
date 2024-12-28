@@ -1,6 +1,6 @@
 {
-	"Show a card grid of posts": "Exibir postagens em grade",
-	"Show a feed list of posts": "Exibir postagens em lista",
+	" Show a card grid of posts": " Exibir postagens em grade",
+	" Show a feed list of posts": " Exibir postagens em lista",
 	"Load more posts": "Carregar mais postagens",
 
 	"{authorname} didn't publish anything yet": "{authorname} não publicou nada ainda",
@@ -29,8 +29,9 @@
 	"Welcome back": "Bem-vindo de volta",
 	"Sign up": "Inscrever-se",
 	"Log in": "Login",
+	"Sign out": "Sair",
 	"Email Address": "Endereço de e-mail",
-	"Enter your email address": "Insira seu e-mail",
+	" Enter your email address": " Insira seu e-mail",
 	"Username": "Nome de usuário",
 	"Enter your username": "Insira seu nome de usuário",
 	"Login": "Login",
@@ -43,7 +44,7 @@
 	"Login link sent! Check your mailbox": "Link de Acesso enviado para seu e-mail! Verifique a caixa de entrada",
 	"Signup successful! Check your mailbox": "Inscrição bem-sucedida! Verifique sua caixa de e-mail",
 	"Newsletter": "Newsletter",
-	"Subscribe Button": "Botão de Inscrição",
+	" Subscribe Button": " Botão de Inscrição",
 	"Coming soon": "Em breve",
 	"Topics": "Tópicos",
 
@@ -54,15 +55,15 @@
 	"show/hide": "exibir/ocultar",
 	"This post is only available to subscribers": "Esta publicação está disponível apenas para membros",
 	"Share this article": "Compartilhar este artigo",
-	"Share this article on Facebook": "Compartilhar este artigo no Facebook",
-	"Share this article on Twitter": "Compartilhar este artigo no Twitter",
-	"Share this article on Linkedin": "Compartilhar este artigo no Linkedin",
-	"Share this article on Reddit": "Compartilhar este artigo no Reddit",
+	" Share this article on Facebook": " Compartilhar este artigo no Facebook",
+	" Share this article on Twitter": " Compartilhar este artigo no Twitter",
+	" Share this article on Linkedin": " Compartilhar este artigo no Linkedin",
+	" Share this article on Reddit": " Compartilhar este artigo no Reddit",
 
 	"Tagged with": "Marcado com",
 
 	"Toggle sidebar menu": "Menu Lateral",
-	"Chat with this article (opens ChatGPT in a new tab)": "Interagir com este artigo (abre o ChatGPT em uma nova aba)",
+	" Chat with this article (opens ChatGPT in a new tab)": " Interagir com este artigo (abre o ChatGPT em uma nova aba)",
 	"Toggle search menu": "Exibir caixa de pesquisa",
 	"Toggle dark theme": "Alternar entre tema escuro e claro",
 
