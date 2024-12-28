@@ -28,13 +28,13 @@
 			{{!-- Show icons here based on post access --}}
 			<div>
 				{{#has visibility="members"}}
-				<span class="mb-1" title="{{t " Members only post"}}">
+				<span class="mb-1" title="{{t "Members only post"}}">
 					{{> icons/user}}
 				</span>
 				{{/has}}
 
 				{{#has visibility="paid"}}
-				<span title="{{t " Paid members only post"}}">
+				<span title="{{t "PaidMembers only post"}}">
 					{{> icons/award}}
 					{{> icons/user}}
 				</span>
