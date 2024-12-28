@@ -1,3 +1,8 @@
+
+/**
+ * Base class to collect subscriber functions and call them with
+ * a predefined payload
+ */
 export default class Observer {
   subscribers: Function[];
   constructor() {

@@ -7,11 +7,29 @@ interface PostLoaderControlSelectors {
 	feedContainer: string;
 }
 export default class PostLoaderControl extends Control implements ControlStruct {
+	/**
+	 * The button element for loading more posts.
+	 */
 	loadMoreButton: HTMLButtonElement;
+
+	/**
+	 * The container element for the grid view of the posts.
+	 */
 	postContainer: HTMLElement;
+
+	/**
+	 * The container element for the feed view of the posts.
+	 */
 	feedContainer: HTMLElement;
+
+	/**
+	 * The link element pointing to the next page.
+	 */
 	nextElement: HTMLLinkElement;
 
+	/**
+	 * Creates an instance of PostLoaderControl.
+	 */
 	constructor({ loadMoreButton, postContainer, feedContainer }: PostLoaderControlSelectors) {
 		super(loadMoreButton);
 		this.loadMoreButton = this.$query(loadMoreButton) as HTMLButtonElement;
@@ -20,6 +38,10 @@ export default class PostLoaderControl extends Control implements ControlStruct 
 		this.nextElement = document.querySelector('link[rel=next]');
 	}
 
+	/**
+	 * Initializes the control by adding an event listener to the load more button
+	 * and removing it if there is no next page.
+	 */
 	public init() {
 		if (this.valid && !this.nextElement) {
 			this.loadMoreButton.remove();
@@ -29,6 +51,9 @@ export default class PostLoaderControl extends Control implements ControlStruct 
 		}
 	}
 
+	/**
+	 * Loads the next page of posts and appends them to the container.
+	 */
 	private async loadMorePosts() {
 		if (this.nextElement) {
 			return this.loadAndAppendPosts();
@@ -36,6 +61,10 @@ export default class PostLoaderControl extends Control implements ControlStruct 
 		this.loadMoreButton.remove();
 	}
 
+	/**
+	 * Fetches the next page of posts.
+	 * @returns {Promise<Document>} The document of the next page.
+	 */
 	private fetchNextPage(): Promise<Document> {
 		return new Promise((resolve, reject) => {
 			const xhr = new window.XMLHttpRequest();
@@ -47,6 +76,9 @@ export default class PostLoaderControl extends Control implements ControlStruct 
 		});
 	}
 
+	/**
+	 * Loads the next page of posts and appends them to the container.
+	 */
 	private async loadAndAppendPosts() {
 		this.loadMoreButton.setAttribute('disabled', '');
 		const nextPage = await this.fetchNextPage();
@@ -61,3 +93,4 @@ export default class PostLoaderControl extends Control implements ControlStruct 
 		this.loadMoreButton.removeAttribute('disabled');
 	}
 }
+

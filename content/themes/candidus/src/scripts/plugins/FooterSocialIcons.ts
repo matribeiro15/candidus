@@ -7,18 +7,47 @@ enum ElementSelectorName {
 
 type ElementSelectorMap = Record<ElementSelectorName, HTMLElement>;
 
+/**
+ * Plugin that renders additional social media icons in the footer.
+ * If the site author has configured additional social media accounts
+ * through the `SOCIAL_ACCOUNTS` option, this plugin will render them as
+ * list items in the footer.
+ *
+ * @class FooterSocialIconsPlugin
+ * @extends PluginBase
+ * @implements ControlStruct
+ */
 export default class FooterSocialIconsPlugin extends PluginBase implements ControlStruct {
+	/**
+	 * The <ul> element in the footer that contains the social media icons.
+	 *
+	 * @private
+	 * @type {HTMLElement}
+	 */
 	private socialUList;
 
+	/**
+	 * Constructor.
+	 *
+	 * @param {string} socialUList The CSS selector for the <ul> element that contains the social media icons.
+	 */
 	constructor(socialUList: string) {
 		super(socialUList);
 		this.socialUList = this.$query(socialUList);
 	}
 
+	/**
+	 * Initialize the plugin.
+	 */
 	public init() {
 		this.renderAdditionalSocialAccounts();
 	}
 
+	/**
+	 * Renders additional social media icons if the site author has configured them.
+	 *
+	 * @private
+	 */
 	private renderAdditionalSocialAccounts() {
 		if (this.hasPluginOption('SOCIAL_ACCOUNTS')) {
 			(this.getPluginOption('SOCIAL_ACCOUNTS') as SocialAccount[]).forEach((account) => {
@@ -27,6 +56,13 @@ export default class FooterSocialIconsPlugin extends PluginBase implements Contr
 		}
 	}
 
+	/**
+	 * Renders a single social media icon as a <li> element.
+	 *
+	 * @private
+	 * @param {SocialAccount} socialAccount The configuration for a single social media account.
+	 * @returns {HTMLElement} A <li> element containing the social media icon.
+	 */
 	private renderSocialListItem(socialAccount: SocialAccount) {
 		const listElement = document.createElement('li');
 		const linkElement = document.createElement('a');
@@ -60,3 +96,4 @@ export default class FooterSocialIconsPlugin extends PluginBase implements Contr
 		return listElement;
 	}
 }
+

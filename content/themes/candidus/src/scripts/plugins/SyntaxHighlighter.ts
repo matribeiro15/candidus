@@ -10,14 +10,24 @@ interface SyntaxHighlighterSelectors {
   scriptSelector: string;
 }
 
+/**
+ * @class SyntaxHighlighter
+ * @extends PluginBase
+ * @implements ControlStruct
+ * @description This class manages the syntax highlighting functionality. It initializes
+ *              the highlighter based on configuration options and listens for theme changes
+ *              to dynamically update the styles.
+ */
 export default class SyntaxHighlighter extends PluginBase implements ControlStruct {
-
   constructor({ stylesheetSelector, scriptSelector }: SyntaxHighlighterSelectors) {
     super(stylesheetSelector);
     this.stylesheet = this.$query(stylesheetSelector) as HTMLLinkElement;
     this.script = this.$query(scriptSelector) as HTMLScriptElement;
   }
 
+  /**
+   * @desc Initialize the syntax highlighter if the corresponding plugin option is available.
+   */
   public init() {
     if (this.hasPluginOption(CANDIDUS_SYNTAX_HIGHLIGHTER)) {
       const options = this.getPluginOption(CANDIDUS_SYNTAX_HIGHLIGHTER) as SyntaxHighlighterConfiguration;
@@ -26,6 +36,10 @@ export default class SyntaxHighlighter extends PluginBase implements ControlStru
     }
   }
 
+  /**
+   * @desc Register the syntax highlighter by setting the appropriate stylesheet and script.
+   * @param options - Configuration options for the syntax highlighter.
+   */
   private registerSyntaxHighlighter(options: SyntaxHighlighterConfiguration) {
     const currentTheme = this.getTheme(options);
     this.$log(`Loading theme stylesheet for ${options.type}-${currentTheme}.css`)
@@ -35,6 +49,10 @@ export default class SyntaxHighlighter extends PluginBase implements ControlStru
     this.stylesheet.dataset['thirdparty_root'] = null;
   }
 
+  /**
+   * @desc Listen for theme change events and update the stylesheet's theme accordingly.
+   * @param options - Configuration options for the syntax highlighter.
+   */
   private listenToThemeChanges(options: SyntaxHighlighterConfiguration) {
     window.addEventListener(EVENT_CHANGE_THEME, (ev: CandidusThemeEvent) => {
       const oldTheme = ev.detail.theme === "dark-theme" ? 'light' : 'dark';
@@ -46,6 +64,11 @@ export default class SyntaxHighlighter extends PluginBase implements ControlStru
     })
   }
 
+  /**
+   * @desc Determine the current theme based on the HTML class list.
+   * @param options - Configuration options for the syntax highlighter.
+   * @returns The current theme as a string.
+   */
   private getTheme(options: SyntaxHighlighterConfiguration) {
     return this.$query('html').classList.contains('light-theme') ? 'light' : 'dark';
   }

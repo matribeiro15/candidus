@@ -28,6 +28,11 @@ export interface InjectedPluginOptions {
 	SYNTAX_HIGHLIGHTER: SyntaxHighlighterConfiguration
 }
 
+/**
+ * Base class for all plugins. Plugins are using the window.CANDIDUS
+ * object and are primarily used for third-party libraries that were
+ * not installed using NPM
+ */
 export default class PluginBase extends Control {
 	public injected: boolean = false;
 	public candidus: InjectedPluginOptions;

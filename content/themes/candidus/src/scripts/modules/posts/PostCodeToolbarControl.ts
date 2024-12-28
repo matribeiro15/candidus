@@ -5,13 +5,31 @@ interface PostCodeToolbarControlOptions {
 import Control, { ControlStruct } from '../../core/base/Control';
 import Renderer from '../../core/base/Renderer';
 import UserDevice from '../../core/device/UserDevice';
-
+/**
+ * This class renders a toolbar for code blocks to copy them to the clipboard.
+ */
 export default class PostCodeToolbarControl extends Control implements ControlStruct {
+  /**
+   * A list of all code blocks on the page.
+   */
   codeContainerElements: NodeList;
-  renderer: Renderer
-  device: UserDevice
+  /**
+   * A renderer object to create the HTML elements.
+   */
+  renderer: Renderer;
+  /**
+   * A device object to check the current screen size.
+   */
+  device: UserDevice;
+  /**
+   * A template for the clipboard button.
+   */
   clipboardButtonTemplate: HTMLElement;
 
+  /**
+   * The constructor of the class.
+   * @param {PostCodeToolbarControlOptions} options - The options for the class.
+   */
   constructor({
     containerSelector
   }: PostCodeToolbarControlOptions) {
@@ -28,9 +46,11 @@ export default class PostCodeToolbarControl extends Control implements ControlSt
         }
       }
     })
-
   }
 
+  /**
+   * Initialize the class.
+   */
   public init() {
     const isSmallerDevice = this.device.getDeviceType() === 'mobile-sm' || this.device.getDeviceType() === 'mobile-md'
     if (this.valid && !isSmallerDevice) {
@@ -38,6 +58,9 @@ export default class PostCodeToolbarControl extends Control implements ControlSt
     }
   }
 
+  /**
+   * Render the toolbar for all code blocks.
+   */
   private renderToolbar() {
     this.codeContainerElements.forEach((element: HTMLElement) => {
       const icon = this.assembleClipboardButton(element)
@@ -45,6 +68,11 @@ export default class PostCodeToolbarControl extends Control implements ControlSt
     })
   };
 
+  /**
+   * Append the toolbar to the code block.
+   * @param {HTMLElement} element - The code block.
+   * @param {HTMLElement} icon - The toolbar button.
+   */
   private appendToolbarToCode(element: HTMLElement, icon: HTMLElement) {
     element.style.position = "relative";
     element.addEventListener('mouseenter', () => icon.style.opacity = "1")
@@ -52,6 +80,11 @@ export default class PostCodeToolbarControl extends Control implements ControlSt
     element.prepend(icon)
   }
 
+  /**
+   * Assemble the clipboard button.
+   * @param {HTMLElement} element - The code block.
+   * @returns {HTMLElement} - The assembled button.
+   */
   private assembleClipboardButton(element: HTMLElement): HTMLElement {
     const icon = this.clipboardButtonTemplate.cloneNode(true) as HTMLElement;
     icon.addEventListener('click', () => {

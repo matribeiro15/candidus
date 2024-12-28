@@ -9,6 +9,9 @@ export interface CandidusThemeEvent extends CustomEvent {
 	}
 }
 
+/**
+ * Class that handles light- and dark theme on all pages
+ */
 export default class ThemeControl {
 	themeButtons: NodeListOf<HTMLElement>;
 	themeIconsSun: NodeListOf<HTMLSpanElement>;
