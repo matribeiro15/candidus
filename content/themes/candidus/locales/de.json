@@ -1,6 +1,6 @@
 {
 	"Show a card grid of posts": "Zeige Artikel als Karten an",
-	"Show a feed list of posts": " Zeige Artikel als Feed an",
+	"Show a feed list of posts": "Zeige Artikel als Feed an",
 	"Load more posts": "Lade weitere Artikel",
 
 	"{authorname} didn't publish anything yet": "{authorname} hat noch keine Artikel veröffentlicht",
@@ -22,7 +22,7 @@
 
 	"Latest publications": "Neueste Artikel",
 	"Members only post": "Artikel nur für Mitglieder",
-	"PaidMembers only post": " Artikel nur für zahlende Mitglieder",
+	"PaidMembers only post": "Artikel nur für zahlende Mitglieder",
 
 	"Close annoucement bar": "Ankündigung schließen",
 
@@ -31,12 +31,11 @@
 	"Log in": "Einloggen",
 	"Sign out": "Sign out",
 	"Email Address": "Email Adresse",
-	" Enter your email address": " Email-Adresse",
-	"Enter your email address": "Enter your email address",
+	"Enter your email address": "Gibt deine Email-Adresse ein",
 	"Username": "Nutzername",
 	"Not signed up yet": "Noch nicht angemeldet",
 	"Create an account": "Jetzt Account erstellen",
-	"Already a member": "Bereit Mitglied",
+	"Already a member": "Bereits Mitglied",
 	"Login": "Jetzt Einloggen",
 	"Logging you in": "Einloggen",
 	"Sending Email": "Sending Email",
@@ -44,8 +43,8 @@
 	"Login link sent! Check your mailbox": "Link versendet! Schauen Sie in Ihrem Postfach nach",
 	"Signup successful! Check your mailbox": "Anmeldung erfolgreich! Schauen Sie in Ihrem Postfach nach",
 	"Newsletter": "Newsletter",
-	" Subscribe": " Subscribe",
-	" Subscribe Button": " Button zum abonnieren",
+	"Subscribe": "Subscribe",
+	"Subscribe Button": "Button zum abonnieren",
 	"Coming soon": "Bald verfügbar",
 	"Topics": "Themen",
 
@@ -56,16 +55,16 @@
 	"show/hide": "ein/ausblenden",
 	"This post is only available to subscribers": "Dieser Artikel ist nur für Abonnenten verfügbar",
 	"Share this article": "Diesen Artikel teilen",
-	"Share this article on Facebook": " Diesen Artikel auf Facebook teilen",
-	"Share this article on Twitter": " Diesen Artikel auf Twitter teilen",
-	"Share this article on Linkedin": " Diesen Artikel auf Linkedin teilen",
-	"Share this article on Reddit": " Diesen Artikel auf Reddit teilen",
+	"Share this article on Facebook": "Diesen Artikel auf Facebook teilen",
+	"Share this article on Twitter": "Diesen Artikel auf Twitter teilen",
+	"Share this article on Linkedin": "Diesen Artikel auf Linkedin teilen",
+	"Share this article on Reddit": "Diesen Artikel auf Reddit teilen",
 
 	"Tagged with": "Getaggt mit",
 
-	"Toggle sidebar menu": " Seitenleiste ein- oder ausblenden",
-	"Chat with this article (opens ChatGPT in a new tab)": " Chatte mit diesem Artikel (öffnet ChatGPT in einem neuen Tab)",
-	"Toggle search menu": " Suchmenü ein- oder ausblenden",
+	"Toggle sidebar menu": "Seitenleiste ein- oder ausblenden",
+	"Chat with this article (opens ChatGPT in a new tab)": "Chatte mit diesem Artikel (öffnet ChatGPT in einem neuen Tab)",
+	"Toggle search menu": "Suchmenü ein- oder ausblenden",
 	"Toggle dark theme": "Zwischen hellem- und dunklem Thema umschalten",
 
 	"Nothing bookmarked yet": "Noch keine Lesezeichen vorhanden",
