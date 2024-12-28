@@ -1,6 +1,6 @@
 {
-	" Show a card grid of posts": " Exibir postagens em grade",
-	" Show a feed list of posts": " Exibir postagens em lista",
+	"Show a card grid of posts": " Exibir postagens em grade",
+	"Show a feed list of posts": " Exibir postagens em lista",
 	"Load more posts": "Carregar mais postagens",
 
 	"{authorname} didn't publish anything yet": "{authorname} não publicou nada ainda",
@@ -21,8 +21,8 @@
 	"To the front page": "Ir para a próxima página",
 
 	"Latest publications": "Publicações recentes",
-	" Members only post": " Publicação disponível apenas para membros",
-	" Paid members only post": " Publicação disponível apenas para membros pagantes",
+	"Members only post": " Publicação disponível apenas para membros",
+	"PaidMembers only post": " Publicação disponível apenas para membros pagantes",
 
 	"Close annoucement bar": "Fechar barra de anúncios",
 
@@ -57,16 +57,16 @@
 	"show/hide": "exibir/ocultar",
 	"This post is only available to subscribers": "Esta publicação está disponível apenas para membros",
 	"Share this article": "Compartilhar este artigo",
-	" Share this article on Facebook": " Compartilhar este artigo no Facebook",
-	" Share this article on Twitter": " Compartilhar este artigo no Twitter",
-	" Share this article on Linkedin": " Compartilhar este artigo no Linkedin",
+	"Share this article on Facebook": " Compartilhar este artigo no Facebook",
+	"Share this article on Twitter": " Compartilhar este artigo no Twitter",
+	"Share this article on Linkedin": " Compartilhar este artigo no Linkedin",
 	" Share this article on Reddit": " Compartilhar este artigo no Reddit",
 
 	"Tagged with": "Marcado com",
 
-	" Toggle sidebar menu": " Menu Lateral",
-	" Chat with this article (opens ChatGPT in a new tab)": " Interagir com este artigo (abre o ChatGPT em uma nova aba)",
-	" Toggle search menu": " Exibir caixa de pesquisa",
+	"Toggle sidebar menu": " Menu Lateral",
+	"Chat with this article (opens ChatGPT in a new tab)": " Interagir com este artigo (abre o ChatGPT em uma nova aba)",
+	"Toggle search menu": " Exibir caixa de pesquisa",
 	"Toggle dark theme": "Alternar entre tema escuro e claro",
 
 	"Nothing bookmarked yet": "Nada destacado ainda",
