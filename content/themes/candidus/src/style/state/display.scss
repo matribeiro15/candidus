@@ -9,6 +9,12 @@
 // Hide only for specific devices (not screen sizes!)
 // Keep in sync with /src/scripts/core/device/resources.ts!
 
+@include xxs-screen {
+  .hidden-mobile {
+    display: none !important;
+  }
+}
+
 @include xs-screen {
   .hidden-mobile {
     display: none !important;
