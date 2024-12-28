@@ -202,3 +202,4 @@ export default class PostPageControl extends Control implements ControlStruct {
 		return item;
 	}
 }
+

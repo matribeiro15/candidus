@@ -3,12 +3,32 @@
 import Control, { ControlStruct } from '../../core/base/Control';
 import Renderer from '../../core/base/Renderer';
 
+/**
+ * A class representing a control for zooming images in a post.
+ * @class
+ */
 export default class PostImageZoomControl extends Control implements ControlStruct {
+  /**
+   * A list of all images in the post.
+   */
   images: NodeList;
+  /**
+   * A renderer for HTML elements.
+   */
   renderer: Renderer;
+  /**
+   * The zoomed in image element.
+   */
   zoomedImage: HTMLImageElement;
+  /**
+   * An element used to shade the background while the image is zoomed.
+   */
   backgroundShade: HTMLElement;
 
+  /**
+   * @constructor
+   * @description Initializes the control and registers the image zoom event.
+   */
   constructor() {
     super();
 
@@ -20,6 +40,9 @@ export default class PostImageZoomControl extends Control implements ControlStru
     this.registerImageZoom();
   }
 
+  /**
+   * @description Registers the image zoom event on all images in the post.
+   */
   private registerImageZoom() {
     this.images.forEach((image: HTMLImageElement) => {
       image.style.cursor = "zoom-in";
@@ -27,12 +50,19 @@ export default class PostImageZoomControl extends Control implements ControlStru
     })
   }
 
+  /**
+   * @description Opens the image zoom view with the given image.
+   * @param {HTMLImageElement} image - The image to zoom in on.
+   */
   private openImageZoom(image: HTMLImageElement) {
     this.zoomedImage.src = image.src;
     this.backgroundShade.style.opacity = "1";
     this.$query('html').appendChild(this.backgroundShade)
   }
 
+  /**
+   * @description Renders the zoomed in image element and the background shade.
+   */
   private renderZoomedImage() {
     this.backgroundShade = this.renderer.$create({
       tag: 'div', options: {
