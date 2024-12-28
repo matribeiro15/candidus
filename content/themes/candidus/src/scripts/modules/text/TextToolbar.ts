@@ -10,6 +10,9 @@ interface TextToolbarOptions {
 import Control, { ControlStruct } from '../../core/base/Control';
 import * as Bookmark from '../../util/Bookmark';
 
+/**
+ * Class to manage the text-toolbar for selected text in posts
+ */
 export default class TextToolbar extends Control implements ControlStruct {
 	containerElement: HTMLElement;
 	markableElements: Record<string, NodeList>;
@@ -213,5 +216,5 @@ export default class TextToolbar extends Control implements ControlStruct {
 		}
 		return markableElementIds;
 	}
-
 }
+

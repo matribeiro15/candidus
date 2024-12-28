@@ -13,6 +13,9 @@ interface BookmarkListOptions {
 	bookmarkPlaceholderSelector: string;
 }
 
+/**
+ * Class that manages the bookmark button and its options
+ */
 export default class BookmarkListControl extends Control implements ControlStruct {
 	navbarContainer: HTMLElement;
 	bookmarkListToggle: HTMLElement;

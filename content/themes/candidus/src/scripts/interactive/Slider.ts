@@ -11,6 +11,10 @@ interface SwiperCustomizing {
 	swiperPreviousArrow: HTMLElement;
 }
 
+/**
+ * Class that handles slider.js. Primarily used on the index page
+ * featured posts
+ */
 export default class FeaturedPostSlider {
 	swiperContainerSelector: string;
 	swiperInstance: Swiper;

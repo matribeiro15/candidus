@@ -13,6 +13,9 @@ export interface RendererXMLElement extends RendererHTMLElement {
 	namespace: string;
 }
 
+/**
+ * Utility class to render static DOM elements.
+ */
 export default class Renderer {
 	$create({ tag, options, children }: RendererHTMLElement) {
 		const element = document.createElement(tag);
