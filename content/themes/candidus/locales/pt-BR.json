@@ -21,8 +21,8 @@
 	"To the front page": "Ir para a próxima página",
 
 	"Latest publications": "Publicações recentes",
-	"Members only post": "Publicação disponível apenas para membros",
-	"Paid members only post": "Publicação disponível apenas para membros pagantes",
+	" Members only post": " Publicação disponível apenas para membros",
+	" Paid members only post": " Publicação disponível apenas para membros pagantes",
 
 	"Close annoucement bar": "Fechar barra de anúncios",
 
@@ -32,6 +32,7 @@
 	"Sign out": "Sair",
 	"Email Address": "Endereço de e-mail",
 	" Enter your email address": " Insira seu e-mail",
+	"Enter your email address": "Insira seu e-mail",
 	"Username": "Nome de usuário",
 	"Enter your username": "Insira seu nome de usuário",
 	"Login": "Login",
@@ -44,6 +45,7 @@
 	"Login link sent! Check your mailbox": "Link de Acesso enviado para seu e-mail! Verifique a caixa de entrada",
 	"Signup successful! Check your mailbox": "Inscrição bem-sucedida! Verifique sua caixa de e-mail",
 	"Newsletter": "Newsletter",
+	" Subscribe": "Inscrever-se",
 	" Subscribe Button": " Botão de Inscrição",
 	"Coming soon": "Em breve",
 	"Topics": "Tópicos",
@@ -62,9 +64,9 @@
 
 	"Tagged with": "Marcado com",
 
-	"Toggle sidebar menu": "Menu Lateral",
+	" Toggle sidebar menu": " Menu Lateral",
 	" Chat with this article (opens ChatGPT in a new tab)": " Interagir com este artigo (abre o ChatGPT em uma nova aba)",
-	"Toggle search menu": "Exibir caixa de pesquisa",
+	" Toggle search menu": " Exibir caixa de pesquisa",
 	"Toggle dark theme": "Alternar entre tema escuro e claro",
 
 	"Nothing bookmarked yet": "Nada destacado ainda",

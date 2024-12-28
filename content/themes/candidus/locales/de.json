@@ -21,8 +21,8 @@
 	"To the front page": "Zur Hauptseite",
 
 	"Latest publications": "Neueste Artikel",
-	"Members only post": "Artikel nur für Mitglieder",
-	"Paid members only post": "Artikel nur für zahlende Mitglieder",
+	" Members only post": " Artikel nur für Mitglieder",
+	" Paid members only post": " Artikel nur für zahlende Mitglieder",
 
 	"Close annoucement bar": "Ankündigung schließen",
 
@@ -31,7 +31,8 @@
 	"Log in": "Einloggen",
 	"Sign out": "Sign out",
 	"Email Address": "Email Adresse",
-	"Enter your email address": "Email-Adresse",
+	" Enter your email address": " Email-Adresse",
+	"Enter your email address": "Enter your email address",
 	"Username": "Nutzername",
 	" Enter your username": " Geben Sie Ihren Nutzernamen ein",
 	"Not signed up yet": "Noch nicht angemeldet",
@@ -44,6 +45,7 @@
 	"Login link sent! Check your mailbox": "Link versendet! Schauen Sie in Ihrem Postfach nach",
 	"Signup successful! Check your mailbox": "Anmeldung erfolgreich! Schauen Sie in Ihrem Postfach nach",
 	"Newsletter": "Newsletter",
+	" Subscribe": " Subscribe",
 	" Subscribe Button": " Button zum abonnieren",
 	"Coming soon": "Bald verfügbar",
 	"Topics": "Themen",
@@ -62,9 +64,9 @@
 
 	"Tagged with": "Getaggt mit",
 
-	"Toggle sidebar menu": "Seitenleiste ein- oder ausblenden",
+	" Toggle sidebar menu": " Seitenleiste ein- oder ausblenden",
 	" Chat with this article (opens ChatGPT in a new tab)": " Chatte mit diesem Artikel (öffnet ChatGPT in einem neuen Tab)",
-	"Toggle search menu": "Suchmenü ein- oder ausblenden",
+	" Toggle search menu": " Suchmenü ein- oder ausblenden",
 	"Toggle dark theme": "Zwischen hellem- und dunklem Thema umschalten",
 
 	"Nothing bookmarked yet": "Noch keine Lesezeichen vorhanden",
