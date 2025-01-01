@@ -21,7 +21,7 @@
 }
 
 .kg-bookmark-title {
-	font-family: 'Oswald', sans-serif !important;
+	font-family: var(--gh-font-heading, Oswald, sans-serif) !important;
 }
 
 .kg-bookmark-description {
