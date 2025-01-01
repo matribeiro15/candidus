@@ -17,6 +17,8 @@
 
 	&__navigation {
 		list-style: none;
+		overflow-y: auto;
+		max-height: 100%;
 		&__item {
 			font-weight: 600;
 			font-size: $text-lg;

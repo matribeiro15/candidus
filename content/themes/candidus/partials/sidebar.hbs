@@ -22,14 +22,15 @@ two static pages have been created in the admin panel:
 			{{!-- Show login/signup buttons only if not logged in. Else, show logout button --}}
 			{{#unless @member}}
 			<li class='sidebar__navigation__item'>
-				<a tabindex='-1' class='px-4 py-2' href="#" data-portal="signup" data-umami-event="signup-button">{{t "Sign up"}}</a>
+				<a tabindex='-1' class='px-2 py-1' href="#" data-portal="signup" data-umami-event="signup-button">{{t "Sign up"}}</a>
 			</li>
 			<li class='sidebar__navigation__item'>
-				<a tabindex='-1' class='px-4 py-2' href="#" data-portal="signin" data-umami-event="login-button">{{t "Log in"}}</a>
+				<a tabindex='-1' class='px-2 py-1' href="#" data-portal="signin" data-umami-event="login-button">{{t "Log in"}}</a>
 			</li>
 			{{else}}
 			<li class='sidebar__navigation__item'>
-  			<a tabindex='-1' class='px-4 py-2' href="javascript:" data-members-signout>{{t "Sign out"}}</a>
+  			<a tabindex='-1' class='px-2 py-1' href="javascript:" data-members-signout>{{t "Sign out"}}</a>
+			</li>
 			{{/unless}}
 
 			{{/if}}
