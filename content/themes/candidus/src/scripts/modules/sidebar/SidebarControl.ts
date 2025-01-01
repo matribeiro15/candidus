@@ -42,6 +42,8 @@ export default class SidebarControl extends Control implements ControlStruct {
 	public init() {
 		if (this.valid) {
 			this.toggleButton.addEventListener('click', () => this.toggleSidebarElement());
+			document.addEventListener('keydown', (ev) => this.registerEscKeyToCloseSidebar(ev));
+
 		}
 	}
 
@@ -73,6 +75,14 @@ export default class SidebarControl extends Control implements ControlStruct {
 	 */
 	private focusFirstSidebarNavigationElement() {
 		(document.querySelector('.sidebar__navigation__item a') as HTMLAnchorElement).focus();
+	}
+
+	private registerEscKeyToCloseSidebar(event: KeyboardEvent) {
+		if (event.key === 'Escape' && !this.sidebarElement.classList.contains('sidebar--hidden')) {
+			event.preventDefault();
+			this.hideSidebarElement();
+			this.focusSidebarToggleButton();
+		}
 	}
 
 	/**
