@@ -65,10 +65,19 @@ export default class PostPageControl extends Control implements ControlStruct {
 
 	private registerTocToggle() {
 		this.tableOfContentsHeader.style.cursor = 'pointer';
+		
+		// Handle click
 		this.tableOfContentsHeader.addEventListener('click', (event) => {
-
 			event.stopPropagation();
 			this.toggleTableOfContents();
+		});
+
+		// Handle keyboard
+		this.tableOfContentsHeader.addEventListener('keydown', (event) => {
+			if (event.key === 'Enter' || event.key === ' ') {
+				event.preventDefault();
+				this.toggleTableOfContents();
+			}
 		});
 	}
 
@@ -145,12 +154,14 @@ export default class PostPageControl extends Control implements ControlStruct {
 		this.tableOfContentsList.style.maxHeight = `${maxListHeight * 2}px`;
 		this.tableOfContentsList.tabIndex = 1;
 		this.tableOfContentsToggle.style.rotate = '90deg';
+		this.tableOfContentsHeader.setAttribute('aria-expanded', 'true');
 	}
 
 	private hideTableOfContents() {
 		this.tableOfContentsList.style.maxHeight = null;
 		this.tableOfContentsList.tabIndex = -1;
 		this.tableOfContentsToggle.style.rotate = '0deg';
+		this.tableOfContentsHeader.setAttribute('aria-expanded', 'false');
 	}
 
 	private renderLinkIcon() {
@@ -202,4 +213,3 @@ export default class PostPageControl extends Control implements ControlStruct {
 		return item;
 	}
 }
-
