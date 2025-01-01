@@ -16,9 +16,9 @@
 
 ## About the Project
 
-Candidus is the result of several months of careful planning and dedicated work. It's a versatile Ghost theme with a minimalistic and approachable design, but a lot of power under the hood.
+Candidus is the result of careful planning and dedicated work. It's a versatile Ghost theme with a minimalistic and approachable design, but a lot of power under the hood.
 
-A few of these include:
+A few of its features include:
 
 - Bookmarks
 - Dark-theme
@@ -39,13 +39,17 @@ and many more.
 
 [Link to latest release](https://github.com/tq-bit/candidus/releases/download/latest/candidus.zip)
 
+[Link to documentation](https://tq-bit.github.io/candidus-docs)
+
 ### Quickstart
 
 1. Upload the `candidus.zip` to your blogging site under https://your-domain.com/ghost/#/settings/design/edit
 2. Change the accent color to `#bdc5d4` or
-3. Start customizing Candidus to your liking
+3. [Check our documentation](https://tq-bit.github.io/candidus-docs) and start customizing Candidus to your liking
 
 ### Development
+
+> To develop Candidus locally, you need to install [Docker](https://docs.docker.com/get-docker/)
 
 1. Fork and clone this repository
 2. Run `cd /content/themes/candidus && npm install && cd ../../../`
