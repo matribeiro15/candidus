@@ -68,6 +68,16 @@
 	"Toggle search menu": "Toggle search menu",
 	"Toggle dark theme": "Toggle between dark and light theme",
 
+	"Skip to main content": "Skip to main content",
+	"Featured posts slider": "Featured posts slider",
+	"Slider navigation": "Slider navigation",
+	"View options": "View options",
+	"Grid view": "Grid view",
+	"List view": "List view",
+	"Posts grid view": "Posts grid view",
+	"Posts list view": "Posts list view",
+	"Loading...": "Loading...",
+
 	"Nothing bookmarked yet": "Nothing bookmarked yet",
 	"Related articles": "Related articles"
 }

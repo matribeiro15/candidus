@@ -89,7 +89,7 @@ hr {
 	opacity: 0.5;
 }
 
-a:not(#annoucement-bar-container a, .tagcloud__list a) {
+a:not(#annoucement-bar-container a, .tagcloud__list a, a.skip-link) {
 	@include theme-colors-just-text;
 	text-decoration: none;
 }

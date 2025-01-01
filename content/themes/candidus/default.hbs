@@ -24,14 +24,22 @@
 </head>
 
 <body>
+  {{!--docker Add skip link for keyboard users --}}
+  <a href="#main-content" class="skip-link">{{t "Skip to main content"}}</a>
+  
   {{!--
   Icons injected here are used by 'FooterSocialIcons' and permit a user to extend
   the social icons displayed in the footer, e.g. by Linkedin, Github, etc.
   --}}
   {{> icons/socialicons}}
-  {{> navbar}}
+  <header role="banner">
+    {{> navbar}}
+  </header>
   {{> sidebar}}
-  {{{body}}}
+  
+  <main id="main-content" role="main">
+    {{{body}}}
+  </main>
 
   {{!--
   Add the footer below the injected content
@@ -40,17 +48,19 @@
   - An optional secondary navigation
   - Default social icons from Ghost and those injected by a user using FooterSocialIconsPlugin
   --}}
-  <footer class="footer pb-4 px-4">
+  <footer class="footer pb-4 px-4" role="contentinfo">
     <div class="container">
       <div class="row">
 
         {{!-- Footer / Secondary navigation --}}
         {{#if @site.secondary_navigation}}
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-4">
-          <h3 class="footer__heading my-2">{{t "Navigation"}}</h3>
-          <ul class="footer__list">
-            {{ navigation type="secondary" }}
-          </ul>
+          <nav role="navigation" aria-label="{{t 'Secondary navigation'}}">
+            <h3 class="footer__heading my-2">{{t "Navigation"}}</h3>
+            <ul class="footer__list">
+              {{ navigation type="secondary" }}
+            </ul>
+          </nav>
         </div>
         {{/if}}
 
@@ -61,8 +71,8 @@
 
             {{#if @site.facebook}}
             <li class='footer__listitem my-1'>
-              <a href="{{facebook_url @site.facebook}}" target="_blank" data-umami-event="follow-facebook">
-                <svg class='mr-1' width='18px' height='18px' role='img' aria-label='facebook'>
+              <a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener" aria-label="{{t 'Follow us on Facebook'}}" data-umami-event="follow-facebook">
+                <svg class='mr-1' width='18px' height='18px' role='img' aria-hidden="true">
                   <use class="icon" href='#facebook'></use>
                 </svg>
                 <span>Facebook</span>
@@ -71,8 +81,8 @@
             {{/if}}
             {{#if @site.twitter}}
             <li class='footer__listitem my-1'>
-              <a href="{{twitter_url @site.twitter}}" target="_blank">
-                <svg class='mr-1' width='18px' height='18px' role='img' aria-label='twitter' data-umami-event="follow-twitter">
+              <a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener" aria-label="{{t 'Follow us on Twitter'}}" data-umami-event="follow-twitter">
+                <svg class='mr-1' width='18px' height='18px' role='img' aria-hidden="true">
                   <use class="icon" href='#twitter'></use>
                 </svg>
                 <span>Twitter</span>

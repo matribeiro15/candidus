@@ -39,3 +39,13 @@
     @content;
   }
 }
+
+@mixin focus-outline {
+  outline: 3px solid $focus-outline-color;
+  outline-offset: 2px;
+}
+
+@mixin form-focus {
+  @include focus-outline;
+  box-shadow: 0 0 0 3px rgba($focus-outline-color, 0.25);
+}

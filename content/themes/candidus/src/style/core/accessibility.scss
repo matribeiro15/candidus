@@ -1,0 +1,84 @@
+// Skip Link
+a.skip-link {
+    border-radius: $border-radius-sm;
+    background-color: $color-primary;
+    color: $color-white !important;
+    position: absolute;
+    top: -52px;
+    margin: 12px;
+    left: 0;
+    padding: 8px;
+    z-index: 999;
+    transition: top 0.3s ease;
+    text-decoration: none;
+
+    &:focus {
+        top: 0;
+    }
+}
+
+// Focus Styles
+:focus {
+    @include focus-outline;
+}
+
+// High Contrast Mode
+@media (prefers-contrast: more) {
+    :root {
+        --text-color: #000000;
+        --background-color: #ffffff;
+        --link-color: #0000EE;
+        --visited-link-color: #551A8B;
+    }
+}
+
+// Reduced Motion
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+// Screen Reader Only
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+// Interactive Elements
+button,
+[role="button"] {
+    &:focus {
+        @include focus-outline;
+    }
+}
+
+// Form Elements
+input,
+textarea,
+select {
+    &:focus {
+        @include form-focus;
+        outline-offset: 0;
+    }
+}
+
+// Error States
+.form-error {
+    border-color: $error-color;
+    background-color: $error-bg-color;
+}
+
+.error-message {
+    color: $error-color;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
