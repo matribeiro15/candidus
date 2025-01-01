@@ -37,7 +37,7 @@
 		padding: $col-padding;
 
 		summary {
-			font-family: 'Oswald', sans-serif;
+			font-family: var(--gh-font-heading, Oswald, sans-serif);
 			font-size: $text-lg;
 		}
 	}

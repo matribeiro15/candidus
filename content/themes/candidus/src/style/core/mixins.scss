@@ -78,7 +78,7 @@ $collection-border: 0.1rem solid transparentize($color: $color-grey,
 	position: relative;
 
 	&__author {
-		font-family: 'Oswald', sans-serif;
+		font-family: var(--gh-font-heading, Oswald, sans-serif);
 		display: flex;
 		position: relative;
 		align-items: center;
@@ -90,17 +90,17 @@ $collection-border: 0.1rem solid transparentize($color: $color-grey,
 	}
 
 	&__authorname {
-		font-family: 'Oswald', sans-serif;
+		font-family: var(--gh-font-heading, Oswald, sans-serif);
 		font-size: $text-sm;
 	}
 
 	&__created {
-		font-family: 'Oswald', sans-serif;
+		font-family: var(--gh-font-heading, Oswald, sans-serif);
 		font-size: $text-xs;
 	}
 
 	&__tag {
-		font-family: 'Oswald', sans-serif;
+		font-family: var(--gh-font-heading, Oswald, sans-serif);
 		font-weight: 600;
 		font-size: $text-sm;
 		background-color: var(--ghost-accent-color);
@@ -181,7 +181,7 @@ $collection-border: 0.1rem solid transparentize($color: $color-grey,
 
 @mixin featured-text {
 	text-transform: uppercase;
-	font-family: Oswald, 'Sans-serif';
+	font-family: var(--gh-font-heading, Oswald, sans-serif);
 	color: var(--color-secondary);
 }
 

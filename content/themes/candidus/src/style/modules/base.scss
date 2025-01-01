@@ -5,7 +5,7 @@
 }
 
 *:not(code, pre, code span) {
-	font-family: 'EB Garamond', 'serif';
+	font-family: var(--gh-font-body, 'EB Garamond', 'serif');
 }
 
 html {
@@ -33,7 +33,7 @@ h6 > * > *,
 blockquote,
 blockquote > *,
 blockquote > * > * {
-	font-family: Oswald, 'Sans-serif' !important;
+	font-family: Oswald, sans-serif !important;
 }
 
 h1 {

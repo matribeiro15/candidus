@@ -21,7 +21,7 @@
 	}
 
 	&__label {
-		font-family: Oswald, 'Sans-serif';
+		font-family: var(--gh-font-heading, Oswald, sans-serif);
 		font-size: $text-md;
 	}
 }
