@@ -15,3 +15,15 @@ See https://ghost.org/help/search/
     </path>
   </svg>
 </button>
+
+{{!-- Custom script to enable keyboard activation of search with CTRL+K--}}
+{{#contentFor "scripts"}}
+<script>
+  document.addEventListener('keydown',  (event) => {
+    if (event.key === 'k' && event.ctrlKey) {
+      event.preventDefault();
+      document.querySelector('[data-ghost-search]').click();
+    }
+  });
+</script>
+{{/contentFor}}
