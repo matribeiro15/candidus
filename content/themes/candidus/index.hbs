@@ -22,18 +22,18 @@ Default landing page. It includes
 <script async src='{{asset "built/index.bundle.js"}}'></script>
 {{/contentFor}}
 
-{{!< default}} {{#get "posts" filter="featured:true" }} <div class="container mt-2 mb-6">
+{{!< default}} {{#get "posts" filter="featured:true" }} 
+<div class="container mt-2 mb-6">
   <div class="row">
     <div class="col-12 px-0">
 
       {{!-- Selector element for the Slider class --}}
-      <div id="index__banner__container--featured" class="swiper">
+      <div id="index__banner__container--featured" class="swiper" role="region" aria-label="{{t 'Featured posts slider'}}">
         <div class="swiper-wrapper">
           {{#match @custom.select_homepage_banner_style "Featured posts"}}
           {{!-- Add h1 and h2 hidden tags for site description --}}
-
-          <h1 class="hidden">{{@site.title}}</h1>
-          <h2 class="hidden">{{@site.description}}</h2>
+          <h1 class="sr-only">{{@site.title}}</h1>
+          <h2 class="sr-only">{{@site.description}}</h2>
           {{#foreach posts}}
           {{> "post/banner" useSliderClass="true" showFeatured="true"}}
           {{ else }}
@@ -46,62 +46,69 @@ Default landing page. It includes
         </div>
 
         {{!-- Slider navigation bullets --}}
-        <div class="swiper-pagination"></div>
+        <div class="swiper-pagination" role="navigation" aria-label="{{t 'Slider navigation'}}"></div>
       </div>
     </div>
   </div>
-  </div>
-  {{/get}}
+</div>
+{{/get}}
 
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8 col-xxl-9">
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8 col-xxl-9">
 
-        {{!-- Posts toolbar --}}
-        <header class="toolbar toolbar--primary p-2 mb-4">
-          <div class="toolbar__left">
-            <h2 class="h3 ml-1">{{t "Latest publications"}}</h2>
-          </div>
-          <div class="toolbar__right">
-            <button title="{{t "Show a card grid of posts" }}" id="grid__button" class="btn btn--flex toolbar__item mr-1">{{> "icons/grid" color="white"}}</button>
-            <button title="{{t "Show a feed list of posts" }}" id="feed__button" class="btn btn--flex toolbar__item">{{> "icons/list" color="white"}}</button>
-          </div>
-        </header>
-
-        {{!-- Toggle between the following two list styles using util. class hidden --}}
-        <main>
-          <div id="post__container" class="grid--three">
-            {{#foreach posts}}
-            {{> "post/card" showHeader="true" showBody="true"}}
-            {{/foreach}}
-          </div>
-          <div id="feed__container" class="hidden">
-            {{#foreach posts}}
-            {{> "post/feed"}}
-            {{/foreach}}
-          </div>
-        </main>
-
-        {{!-- Read more button --}}
-        <div class="my-4 content--centered">
-          <button id="read-more__button" class="btn btn--primary btn--wider">{{t "Load more posts"}}</button>
+      {{!-- Posts toolbar --}}
+      <header class="toolbar toolbar--primary p-2 mb-4">
+        <div class="toolbar__left">
+          <h2 class="h3 ml-1">{{t "Latest publications"}}</h2>
         </div>
-        <!-- / Posts section -->
+        <div class="toolbar__right" role="toolbar" aria-label="{{t 'View options'}}">
+          <button title="{{t "Show a card grid of posts" }}" id="grid__button" class="btn btn--flex toolbar__item mr-1" aria-pressed="true">
+            {{> "icons/grid" color="white"}}
+            <span class="sr-only">{{t "Grid view"}}</span>
+          </button>
+          <button title="{{t "Show a feed list of posts" }}" id="feed__button" class="btn btn--flex toolbar__item" aria-pressed="false">
+            {{> "icons/list" color="white"}}
+            <span class="sr-only">{{t "List view"}}</span>
+          </button>
+        </div>
+      </header>
+
+      {{!-- Toggle between the following two list styles using util. class hidden --}}
+      <main>
+        <div id="post__container" class="grid--three" role="feed" aria-label="{{t 'Posts grid view'}}">
+          {{#foreach posts}}
+          {{> "post/card" showHeader="true" showBody="true"}}
+          {{/foreach}}
+        </div>
+        <div id="feed__container" class="hidden" role="feed" aria-label="{{t 'Posts list view'}}">
+          {{#foreach posts}}
+          {{> "post/feed"}}
+          {{/foreach}}
+        </div>
+      </main>
+
+      {{!-- Read more button --}}
+      <div class="my-4 content--centered">
+        <button id="read-more__button" class="btn btn--primary btn--wider" aria-label="{{t 'Load more posts'}}" data-loading-text="{{t 'Loading...'}}">
+          {{t "Load more posts"}}
+        </button>
       </div>
-
-      <hr class="hidden-desktop">
-      {{!-- Subscription column --}}
-      <aside class="col-sm-12 col-md-12 col-lg-12 col-xl-4 col-xxl-3">
-        {{> "subscribe"}}
-        <div class="my-4">
-          {{> "tagcloud"}}
-        </div>
-      </aside>
     </div>
-  </div>
 
-  {{#if @custom.show_subscribe_cta_on_homepage}}
-  <div>
-    {{> "subscribe" type="block"}}
+    <hr class="hidden-desktop" role="presentation">
+    {{!-- Subscription column --}}
+    <aside class="col-sm-12 col-md-12 col-lg-12 col-xl-4 col-xxl-3" role="complementary">
+      {{> "subscribe"}}
+      <div class="my-4">
+        {{> "tagcloud"}}
+      </div>
+    </aside>
   </div>
-  {{/if}}
+</div>
+
+{{#if @custom.show_subscribe_cta_on_homepage}}
+<div>
+  {{> "subscribe" type="block"}}
+</div>
+{{/if}}

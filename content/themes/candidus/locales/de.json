@@ -68,5 +68,15 @@
 	"Toggle dark theme": "Zwischen hellem- und dunklem Thema umschalten",
 
 	"Nothing bookmarked yet": "Noch keine Lesezeichen vorhanden",
-	"Related articles": "Related articles"
+	"Related articles": "Related articles",
+
+	"Skip to main content": "Zum Hauptinhalt springen",
+	"Featured posts slider": "Slider für hervorgehobene Beiträge",
+	"Slider navigation": "Slider-Navigation",
+	"View options": "Ansichtsoptionen",
+	"Grid view": "Rasteransicht",
+	"List view": "Listenansicht",
+	"Posts grid view": "Beiträge in Rasteransicht",
+	"Posts list view": "Beiträge in Listenansicht",
+	"Loading...": "Wird geladen..."
 }

@@ -69,5 +69,14 @@
 	"Toggle dark theme": "Alternar entre tema escuro e claro",
 
 	"Nothing bookmarked yet": "Nada destacado ainda",
-	"Related articles": "Artigos relacionados"
+	"Related articles": "Artigos relacionados",
+	"Skip to main content": "Pular para o conteúdo principal",
+	"Featured posts slider": "Slider de posts em destaque",
+	"Slider navigation": "Navegação do slider",
+	"View options": "Opções de visualização",
+	"Grid view": "Visualização em grade",
+	"List view": "Visualização em lista",
+	"Posts grid view": "Posts em visualização em grade",
+	"Posts list view": "Posts em visualização em lista",
+	"Loading...": "Carregando..."
 }

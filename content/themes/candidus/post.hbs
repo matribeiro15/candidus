@@ -54,15 +54,16 @@ Includes markup for the default post - page.
                 {{/if}}
                 {{!-- Render TOC only if member has access and feature is enabled --}}
                 {{#if @custom.enable_table_of_contents}}
+                {{!-- Table of Contents with improved accessibility --}}
                 <div id="toc__container" class="page__toc py-2 mt-2 mb-4">
-                    <div id="toc__header" class="page__toc__header">
-                        <svg id="toc__toggle" class='icon page__toc__toggle' width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                    <div id="toc__header" class="page__toc__header" role="button" aria-expanded="false" aria-controls="toc__list" tabindex="0">
+                        <svg id="toc__toggle" class='icon page__toc__toggle' width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' aria-hidden="true">
                             <path d='M10.5858 6.34317L12 4.92896L19.0711 12L12 19.0711L10.5858 17.6569L16.2427 12L10.5858 6.34317Z' fill='currentColor'></path>
                         </svg>
-                        <h2 id="toc__heading" class="h3"> {{t "Table of contents"}} </h2>
+                        <h2 id="toc__heading" class="h3">{{t "Table of contents"}}</h2>
                     </div>
-                    {{!-- Ordered List element is targetted by 'toc__container' selector --}}
-                    <ol tabindex="-1" class="dropdown__drawer dropdown__drawer--theme"></ol>
+                    {{!-- Ordered List element with improved accessibility --}}
+                    <ol id="toc__list" tabindex="-1" class="dropdown__drawer dropdown__drawer--theme" role="list" aria-labelledby="toc__heading"></ol>
                 </div>
                 {{/if}}
                 {{/if}}
