@@ -2,3 +2,6 @@ content/themes/casper
 content/themes/candidus/node_modules
 content/themes/candidus/.env
 content/themes/candidus/assets/built
+
+sync-helper/node_modules
+sync-helper/.env

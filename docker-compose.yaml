@@ -18,3 +18,9 @@ services:
       - 3000:3000
     volumes:
       - './content/themes/candidus:/usr/src/app'
+  sync: 
+    image: node:20
+    working_dir: /usr/src/app
+    command: bash -c "npm run sync:dev"
+    volumes:
+      - './sync-helper:/usr/src/app'
