@@ -5,11 +5,11 @@
 		<header class='postcard__header mb-1'>
 
 			{{#if feature_image}}
-			<img loading='lazy' class='image--wide rounded--md' src='{{img_url feature_image}}' alt='{{title}} by {{primary_author.name}}' />
+			<img loading='lazy' class='image--wide rounded--md' src='{{img_url feature_image}}' alt='{{title}} {{t "by"}} {{primary_author.name}}' />
 			{{else if primary_tag.feature_image}}
-			<img loading='lazy' class='image--wide rounded--md ' src='{{primary_tag.feature_image}}' alt='{{title}} by {{primary_author.name}}' />
+			<img loading='lazy' class='image--wide rounded--md ' src='{{primary_tag.feature_image}}' alt='{{title}} {{t "by"}} {{primary_author.name}}' />
 			{{else}}
-			<img loading='lazy' class='image--wide rounded--md ' src='{{img_url @site.cover_image}}' alt='{{title}} by {{primary_author.name}}' />
+			<img loading='lazy' class='image--wide rounded--md ' src='{{img_url @site.cover_image}}' alt='{{title}} {{t "by"}} {{primary_author.name}}' />
 
 			{{/if}}
 		</header>
@@ -34,7 +34,7 @@
 				{{/has}}
 
 				{{#has visibility="paid"}}
-				<span title="{{t "PaidMembers only post"}}">
+				<span title="{{t "Paid Members only post"}}">
 					{{> icons/award}}
 					{{> icons/user}}
 				</span>

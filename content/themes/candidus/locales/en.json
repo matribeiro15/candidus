@@ -22,7 +22,7 @@
 
 	"Latest publications": "Latest publications",
 	"Members only post": "Members only post",
-	"PaidMembers only post": "PaidMembers only post",
+	"Paid Members only post": "Paid Members only post",
 
 	"Close annoucement bar": "Close annoucement bar",
 
@@ -79,5 +79,14 @@
 	"Loading...": "Loading...",
 
 	"Nothing bookmarked yet": "Nothing bookmarked yet",
-	"Related articles": "Related articles"
+	"Related articles": "Related articles",
+
+	"Continue reading": "Continue reading",
+	"by": "by",
+	"Copy selected text to the clipboard": "Copy selected text to the clipboard",
+	"Bookmark this paragraph": "Bookmark this paragraph",
+	"Tweet this quote": "Tweet this quote",
+	"Show details": "Show details",
+	"Join the discussion": "Join the discussion",
+	"Topics": "Topics"
 }

@@ -7,13 +7,13 @@
 
 	{{! Bookmark Button }}
 	{{#if @custom.enable_bookmarks}}
-	<button title='Bookmark this paragraph' id='marker__menu--bookmark' class='btn btn--flex mx-1 '>
+	<button title='{{t "Bookmark this paragraph"}}' id='marker__menu--bookmark' class='btn btn--flex mx-1 '>
 		{{> "icons/bookmark"}}
 	</button>
 	{{/if}}
 
 	{{! Twitter Button }}
-	<button title='Tweet this quote' id='marker__menu--twitter' class='btn btn--flex mx-1'>
+	<button title='{{t "Tweet this quote"}}' id='marker__menu--twitter' class='btn btn--flex mx-1'>
 		<svg width='24px' height='24px'>
 			<use class='icon' xlink:href='#twitter'></use>
 		</svg>
@@ -21,7 +21,7 @@
 
 	{{! Clipboard button }}
 	<button
-		title='Copy selected text to the clipboard'
+		title='{{t "Copy selected text to the clipboard"}}'
 		id='marker__menu--clipboard'
 		class='btn btn--flex mx-1'
 	>

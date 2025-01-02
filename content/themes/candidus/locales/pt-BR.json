@@ -1,6 +1,6 @@
 {
-	"Show a card grid of posts": " Exibir postagens em grade",
-	"Show a feed list of posts": " Exibir postagens em lista",
+	"Show a card grid of posts": "Exibir postagens em grade",
+	"Show a feed list of posts": "Exibir postagens em lista",
 	"Load more posts": "Carregar mais postagens",
 
 	"{authorname} didn't publish anything yet": "{authorname} não publicou nada ainda",
@@ -21,8 +21,8 @@
 	"To the front page": "Ir para a próxima página",
 
 	"Latest publications": "Publicações recentes",
-	"Members only post": " Publicação disponível apenas para membros",
-	"PaidMembers only post": " Publicação disponível apenas para membros pagantes",
+	"Members only post": "Publicação disponível apenas para membros",
+	"Paid Members only post": "Publicação disponível apenas para membros pagantes",
 
 	"Close annoucement bar": "Fechar barra de anúncios",
 
@@ -31,7 +31,7 @@
 	"Log in": "Login",
 	"Sign out": "Sair",
 	"Email Address": "Endereço de e-mail",
-	"Enter your email address": " Insira seu e-mail",
+	"Enter your email address": "Insira seu e-mail",
 	"Username": "Nome de usuário",
 	"Enter your username": "Insira seu nome de usuário",
 	"Login": "Login",
@@ -45,7 +45,7 @@
 	"Signup successful! Check your mailbox": "Inscrição bem-sucedida! Verifique sua caixa de e-mail",
 	"Newsletter": "Newsletter",
 	"Subscribe": "Inscrever-se",
-	"Subscribe Button": " Botão de Inscrição",
+	"Subscribe Button": "Botão de Inscrição",
 	"Coming soon": "Em breve",
 	"Topics": "Tópicos",
 
@@ -56,27 +56,37 @@
 	"show/hide": "exibir/ocultar",
 	"This post is only available to subscribers": "Esta publicação está disponível apenas para membros",
 	"Share this article": "Compartilhar este artigo",
-	"Share this article on Facebook": " Compartilhar este artigo no Facebook",
-	"Share this article on Twitter": " Compartilhar este artigo no Twitter",
-	"Share this article on Linkedin": " Compartilhar este artigo no Linkedin",
-	"Share this article on Reddit": " Compartilhar este artigo no Reddit",
+	"Share this article on Facebook": "Compartilhar este artigo no Facebook",
+	"Share this article on Twitter": "Compartilhar este artigo no Twitter",
+	"Share this article on Linkedin": "Compartilhar este artigo no Linkedin",
+	"Share this article on Reddit": "Compartilhar este artigo no Reddit",
 
 	"Tagged with": "Marcado com",
 
-	"Toggle sidebar menu": " Menu Lateral",
-	"Chat with this article (opens ChatGPT in a new tab)": " Interagir com este artigo (abre o ChatGPT em uma nova aba)",
-	"Toggle search menu": " Exibir caixa de pesquisa",
+	"Toggle sidebar menu": "Menu Lateral",
+	"Chat with this article (opens ChatGPT in a new tab)": "Interagir com este artigo (abre o ChatGPT em uma nova aba)",
+	"Toggle search menu": "Exibir caixa de pesquisa",
 	"Toggle dark theme": "Alternar entre tema escuro e claro",
 
-	"Nothing bookmarked yet": "Nada destacado ainda",
-	"Related articles": "Artigos relacionados",
 	"Skip to main content": "Pular para o conteúdo principal",
-	"Featured posts slider": "Slider de posts em destaque",
-	"Slider navigation": "Navegação do slider",
+	"Featured posts slider": "Galeria de posts em destaque",
+	"Slider navigation": "Navegação da galeria",
 	"View options": "Opções de visualização",
 	"Grid view": "Visualização em grade",
 	"List view": "Visualização em lista",
-	"Posts grid view": "Posts em visualização em grade",
-	"Posts list view": "Posts em visualização em lista",
-	"Loading...": "Carregando..."
+	"Posts grid view": "Visualização de postagens em grade",
+	"Posts list view": "Visualização de postagens em lista",
+	"Loading...": "Carregando...",
+
+	"Nothing bookmarked yet": "Nada destacado ainda",
+	"Related articles": "Artigos relacionados",
+
+	"Continue reading": "Continuar a leitura",
+	"by": "por",
+	"Copy selected text to the clipboard": "Copiar texto selecionado",
+	"Bookmark this paragraph": "Destacar esse parágrafago",
+	"Tweet this quote": "Tuitar essa citação",
+	"Show details": "Exibir Detalhes",
+	"Join the discussion": "Participe da conversa",
+	"Topics": "Tópicos"
 }
