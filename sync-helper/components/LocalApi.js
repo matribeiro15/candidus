@@ -54,3 +54,14 @@ export const updateLocalPost = async (post) => {
     return result;
   }
 };
+
+export const getLocalSiteInfo = async () => {
+  let siteInfo = null;
+  try {
+    siteInfo = await api.site.read();
+  } catch (error) {
+    logger.error(error);
+  } finally {
+    return siteInfo;
+  }
+};

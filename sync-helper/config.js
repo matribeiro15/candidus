@@ -1,3 +1,5 @@
+import { logger } from "./util/Logger.js";
+
 /** @type {string} */
 export const GH_REMOTE_URL = process.env.GH_REMOTE_URL || "";
 
@@ -11,7 +13,7 @@ export const GH_LOCAL_URL = process.env.GH_LOCAL_URL || "http://ghost:2368";
 export const GH_LOCAL_TOKEN = process.env.GH_LOCAL_TOKEN || "";
 
 /** @type {number} */
-export const SYNC_INTERVAL = +(process.env.SYNC_INTERVAL || 60000);
+export const SYNC_INTERVAL = +(process.env.SYNC_INTERVAL || 120000);
 
 /** @type {string} */
 export const GH_API_PATH = "ghost/api/admin";
@@ -33,11 +35,11 @@ export const validateConfig = () => {
   }
 
   if (errors.length > 0) {
-    console.group("Missing configuration params. Exiting ...");
+    logger.error("Missing mandatory configuration params");
     errors.forEach((error) => {
-      console.error(`Missing param: ${error}`);
+      logger.error(`Missing param: ${error}`);
     });
-    console.groupEnd();
+    logger.error("Exiting...");
     process.exit(1);
   }
 };

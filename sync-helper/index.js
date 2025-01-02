@@ -1,9 +1,14 @@
-import { validateConfig } from "./config.js";
-import { syncPosts } from "./components/SyncService.js";
+import { validateConfig, SYNC_INTERVAL } from "./config.js";
+import { syncPosts, printSiteInfo, printNextSyncTime } from "./components/SyncService.js";
+
+validateConfig();
 
 async function main() {
-  validateConfig();
+  await printSiteInfo();
   await syncPosts();
+  printNextSyncTime(SYNC_INTERVAL);
 }
 
-main();
+// Run the sync service
+setTimeout(main, 5000);
+setInterval(main, SYNC_INTERVAL);

@@ -33,3 +33,14 @@ export const getRemotePosts = async ({
     return posts;
   }
 };
+
+export const getRemoteSiteInfo = async () => {
+  let siteConfig = null;
+  try {
+    siteConfig = await api.site.read();
+  } catch (error) {
+    logger.error(error);
+  } finally {
+    return siteConfig;
+  }
+};
