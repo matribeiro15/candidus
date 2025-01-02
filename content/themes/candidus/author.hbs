@@ -13,7 +13,7 @@ This page includes default info about the author as well as a list of their publ
 {{!< default}} <!-- -->
     {{#author}}
 
-    <div class="container">
+    <header id="main-content" role="main" class="container">
         <div class="author__header">
             <div class="author__header__bg-image">
                 {{#if cover_image}}
@@ -95,7 +95,7 @@ This page includes default info about the author as well as a list of their publ
 
             <div class="col-sm-12 col-md-1 col-lg-2 col-xl-3 col-xxl-4"></div>
         </div>
-    </div>
+    </header>
 
     <div class='container'>
         {{!--
@@ -116,7 +116,7 @@ This page includes default info about the author as well as a list of their publ
                 </header>
 
                 {{!-- Toggle between the following two list styles using util. class hidden --}}
-                <main>
+                <main id="main-content" role="main">
                     <div id="post__container" class="grid--three">
                         {{#foreach posts}}
                         {{> "post/card" showHeader="true" showBody="true"}}
@@ -127,7 +127,7 @@ This page includes default info about the author as well as a list of their publ
                         {{> "post/feed"}}
                         {{/foreach}}
                     </div>
-                </main>
+                </main>    
 
 
                 {{!-- Load-more-posts button --}}
