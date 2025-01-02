@@ -1,6 +1,3 @@
-import { configDotenv } from "dotenv";
-configDotenv();
-
 /** @type {string} */
 export const GH_REMOTE_URL = process.env.GH_REMOTE_URL || "";
 

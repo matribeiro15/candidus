@@ -21,6 +21,8 @@ services:
   sync: 
     image: node:20
     working_dir: /usr/src/app
+    env_file:
+      - sync-helper/.env
     depends_on:
       - ghost
     command: bash -c "npm run sync:dev"
