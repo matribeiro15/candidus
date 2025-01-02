@@ -1,10 +1,6 @@
-import {
-  GH_LOCAL_TOKEN,
-  GH_LOCAL_URL,
-  GH_API_VERSION,
-} from "../config.js";
-
 import GhostAdminApi from "@tryghost/admin-api";
+import { GH_LOCAL_TOKEN, GH_LOCAL_URL, GH_API_VERSION } from "../config.js";
+import { logger } from "../util/Logger.js";
 
 // @ts-ignore
 const api = new GhostAdminApi({
@@ -16,24 +12,45 @@ const api = new GhostAdminApi({
 });
 
 export const getLocalPost = async (slug) => {
-  let result = null;
+  let post = null;
   try {
-    const post = await api.posts.read({ slug: slug });
-    result = post;
+    post = await api.posts.read({ slug: slug });
   } catch (error) {
-    console.log(error);
+    logger.error(error);
+  } finally {
+    return post;
   }
-  return result;
 };
 
 export const getLocalPosts = async () => {
-  return await api.posts.browse().catch((err) => console.error(err));
+  let posts = null;
+  try {
+    posts = await api.posts.browse();
+  } catch (error) {
+    logger.error(error);
+  } finally {
+    return posts;
+  }
 };
 
 export const createLocalPost = async (post) => {
-  return await api.posts.add(post).catch((err) => console.error(err));
+  let result = null;
+  try {
+    result = await api.posts.add(post);
+  } catch (error) {
+    logger.error(error);
+  } finally {
+    return result;
+  }
 };
 
 export const updateLocalPost = async (post) => {
-  return await api.posts.edit(post).catch((err) => console.error(err));
+  let result = null;
+  try {
+    result = await api.posts.edit(post);
+  } catch (error) {
+    logger.error(error);
+  } finally {
+    return result;
+  }
 };

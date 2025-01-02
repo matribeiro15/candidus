@@ -5,3 +5,4 @@ content/themes/candidus/assets/built
 
 sync-helper/node_modules
 sync-helper/.env
+sync-helper/logs

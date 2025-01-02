@@ -16,6 +16,8 @@
   },
   "dependencies": {
     "@tryghost/admin-api": "^1.13.12",
-    "dotenv": "^16.4.7"
+    "dotenv": "^16.4.7",
+    "pino": "^8.17.2",
+    "pino-pretty": "^10.3.1"
   }
 }

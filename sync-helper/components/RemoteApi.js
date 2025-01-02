@@ -1,11 +1,6 @@
 import GhostAdminApi from "@tryghost/admin-api";
-
-import {
-  GH_REMOTE_TOKEN,
-  GH_REMOTE_URL,
-  GH_API_VERSION,
-} from "../config.js";
-
+import { GH_REMOTE_TOKEN, GH_REMOTE_URL, GH_API_VERSION } from "../config.js";
+import { logger } from "../util/Logger.js";
 // @ts-ignore
 const api = new GhostAdminApi({
   url: GH_REMOTE_URL,
@@ -15,20 +10,15 @@ const api = new GhostAdminApi({
   cache: false,
 });
 
-export const getRemotePost = async (slug) => {
-  return await api.posts
-    .read({ slug: slug })
-    .catch((error) => console.error(error));
-};
-
 export const getRemotePosts = async ({
   page = 1,
   limit = 100,
-  include = "tags",
+  include = "tags,authors",
   filter = "status:published",
 } = {}) => {
-  return await api.posts
-    .browse(
+  let posts = [];
+  try {
+    posts = await api.posts.browse(
       {
         page: page,
         limit: limit,
@@ -36,6 +26,10 @@ export const getRemotePosts = async ({
         filter: filter,
       },
       { cache: false }
-    )
-    .catch((error) => console.error(error));
+    );
+  } catch (error) {
+    logger.error(error);
+  } finally {
+    return posts;
+  }
 };
