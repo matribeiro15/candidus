@@ -23,7 +23,7 @@ Default landing page. It includes
 {{/contentFor}}
 
 {{!< default}} {{#get "posts" filter="featured:true" }} 
-<div class="container mt-2 mb-6">
+<header role="banner" class="container mt-2 mb-6">
   <div class="row">
     <div class="col-12 px-0">
 
@@ -50,7 +50,7 @@ Default landing page. It includes
       </div>
     </div>
   </div>
-</div>
+</header>
 {{/get}}
 
 <div class="container">
@@ -58,7 +58,7 @@ Default landing page. It includes
     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-8 col-xxl-9">
 
       {{!-- Posts toolbar --}}
-      <header class="toolbar toolbar--primary p-2 mb-4">
+      <div class="toolbar toolbar--primary p-2 mb-4">
         <div class="toolbar__left">
           <h2 class="h3 ml-1">{{t "Latest publications"}}</h2>
         </div>
@@ -72,10 +72,10 @@ Default landing page. It includes
             <span class="sr-only">{{t "List view"}}</span>
           </button>
         </div>
-      </header>
+      </div>
 
       {{!-- Toggle between the following two list styles using util. class hidden --}}
-      <main>
+      <main id="main-content" role="main">
         <div id="post__container" class="grid--three" role="feed" aria-label="{{t 'Posts grid view'}}">
           {{#foreach posts}}
           {{> "post/card" showHeader="true" showBody="true"}}

@@ -32,15 +32,10 @@
   the social icons displayed in the footer, e.g. by Linkedin, Github, etc.
   --}}
   {{> icons/socialicons}}
-  <header role="banner">
-    {{> navbar}}
-  </header>
+  {{> navbar}}
   {{> sidebar}}
+  {{{body}}}
   
-  <main id="main-content" role="main">
-    {{{body}}}
-  </main>
-
   {{!--
   Add the footer below the injected content
   The footer consists of
