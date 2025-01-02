@@ -22,7 +22,7 @@
 
 	"Latest publications": "Neueste Artikel",
 	"Members only post": "Artikel nur für Mitglieder",
-	"PaidMembers only post": "Artikel nur für zahlende Mitglieder",
+	"Paid Members only post": "Artikel nur für zahlende Mitglieder",
 
 	"Close annoucement bar": "Ankündigung schließen",
 
@@ -78,5 +78,14 @@
 	"List view": "Listenansicht",
 	"Posts grid view": "Beiträge in Rasteransicht",
 	"Posts list view": "Beiträge in Listenansicht",
-	"Loading...": "Wird geladen..."
+	"Loading...": "Wird geladen...",
+
+	"Continue reading": "Continue reading",
+	"by": "by",
+	"Copy selected text to the clipboard": "Copy selected text to the clipboard",
+	"Bookmark this paragraph": "Bookmark this paragraph",
+	"Tweet this quote": "Tweet this quote",
+	"Show details": "Show details",
+	"Join the discussion": "Join the discussion",
+	"Topics": "Topics"
 }
