@@ -68,6 +68,24 @@
 	"Toggle search menu": "Arama menüsünü aç/kapat",
 	"Toggle dark theme": "Koyu ve açık tema arasında geçiş yap",
 
+	"Skip to main content": "Skip to main content",
+	"Featured posts slider": "Featured posts slider",
+	"Slider navigation": "Slider navigation",
+	"View options": "View options",
+	"Grid view": "Grid view",
+	"List view": "List view",
+	"Posts grid view": "Posts grid view",
+	"Posts list view": "Posts list view",
+	"Loading...": "Loading...",
+	
 	"Nothing bookmarked yet": "Henüz yer imlerine eklenmiş bir şey yok",
-	"Related articles": "İlgili içerikler"
+	"Related articles": "İlgili içerikler",
+
+	"Continue reading": "Continue reading",
+	"by": "by",
+	"Copy selected text to the clipboard": "Copy selected text to the clipboard",
+	"Bookmark this paragraph": "Bookmark this paragraph",
+	"Tweet this quote": "Tweet this quote",
+	"Show details": "Show details",
+	"Join the discussion": "Join the discussion"
 }
